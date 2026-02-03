@@ -4,8 +4,8 @@
   color-scheme: dark;
   --bg: #0f1115;
   --text: #e6e6e6;
-  --muted-0: rgba(165, 173, 186, 1)
-  --muted-1: rgba(165, 173, 186, 0.05)
+  --muted-0: rgba(165, 173, 186, 1);
+  --muted-1: rgba(165, 173, 186, 0.05);
   --accent-0: rgba(78, 152, 213, 1);
   --accent-1: rgba(78, 152, 213, 0.5);
   --accent-2: rgba(78, 152, 213, 0.05);
