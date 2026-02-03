@@ -1,0 +1,1934 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bonjour Monde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900;1000&family=Montserrat:wght@400;500;600;700;800&family=Racing+Sans+One&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.js"></script>
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a class="site-header__brand-text" href="#top" aria-label="Retour en haut de la page">
+        <span>M</span>
+        <span>A</span>
+        <span>E</span>
+        <span>S</span>
+      </a>
+      <nav class="site-header__nav" aria-label="Navigation principale">
+        <a href="#chart">EXPLORE</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+      <button class="site-header__pill" type="button" aria-label="Basculer le mode sombre ou clair">
+        <span aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+            <path d="M22.81 15.95a9.35 9.35 0 0 1-12.36-12.36A9.9 9.9 0 1 0 22.81 15.95Z"></path>
+          </svg>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <div class="chart__card">
+        <h1 class="hero__title">Magnetized Accretion-Ejection Structures</h1>
+        <p class="hero__subtitle hero__subtitle--lead">An astrophysical framework for understanding how magnetized disks accrete matter and launch outflows.<br>MHD solutions reveal two regimes: <strong>Jet Emitting Disks (JED)</strong> and <strong>Wind Emitting Disks (WED)</strong>. Explore them below.</p>
+        <p class="hero__subtitle hero__subtitle--references">
+          <a href="https://ui.adsabs.harvard.edu/abs/1995A%26A...295..807F/abstract" target="_blank" rel="noopener noreferrer">Ferreira &amp; Pelletier 1995</a>
+          &nbsp;|&nbsp;
+          <a href="https://ui.adsabs.harvard.edu/abs/1997A%26A...319..340F/abstract" target="_blank" rel="noopener noreferrer">Ferreira 1997</a>
+          &nbsp;|&nbsp;
+          <a href="https://ui.adsabs.harvard.edu/abs/2000A%26A...353.1115C/abstract" target="_blank" rel="noopener noreferrer">Casse &amp; Ferreira 2000a</a>
+          ,
+          <a href="https://ui.adsabs.harvard.edu/abs/2000A%26A...361.1178C/abstract" target="_blank">2000b</a>
+          &nbsp;|&nbsp;
+          <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.490.3112J/abstract" target="_blank" rel="noopener noreferrer">Jacquemin-Ide et al. 2019</a>
+          &nbsp;|&nbsp;
+          <a href="https://ui.adsabs.harvard.edu/abs/2024A%26A...692A..99Z/abstract" target="_blank" rel="noopener noreferrer">Zimniak et al. 2024</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="chart" class="chart" aria-label="Explore">
+    <div class="chart__card">
+      <div class="chart__body">
+        <div class="chart__controls" aria-label="Réglages du nuage de points">
+          <div class="chart__control-group">
+            <p class="chart__eyebrow chart__eyebrow--sub">Input parameters</p>
+            <div class="chart__slider-grid">
+              <div class="chart__control">
+                <div class="chart__control-row chart__control-row--aspect">
+                  <label for="p1-slider" class="chart__control-label--aspect">
+                    <span class="chart__label-text">Aspect ratio</span>
+                    <span class="chart__label-math">
+                      <span class="math-label" data-latex="\varepsilon"></span>
+                      <span class="chart__label-equals">=</span>
+                      <span id="p1-label-value" class="chart__label-value">50</span>
+                    </span>
+                  </label>
+                  <input id="p1-slider" type="range" min="0" max="100" step="1" value="50">
+                </div>
+              </div>
+              <div class="chart__control">
+                <div class="chart__control-row chart__control-row--aspect">
+                  <label for="p2-slider" class="chart__control-label--aspect">
+                    <span class="chart__label-text">Magnetic diffusivity</span>
+                    <span class="chart__label-math">
+                      <span class="math-label" data-latex="\alpha_m"></span>
+                      <span class="chart__label-equals">=</span>
+                      <span id="p2-label-value" class="chart__label-value">40</span>
+                    </span>
+                  </label>
+                  <input id="p2-slider" type="range" min="0" max="100" step="1" value="40">
+                </div>
+              </div>
+              <div class="chart__control">
+                <div class="chart__control-row chart__control-row--aspect">
+                  <label for="p3-slider" class="chart__control-label--aspect">
+                    <span class="chart__label-text">Magnetic diffusivity anisotropy</span>
+                    <span class="chart__label-math">
+                      <span class="math-label" data-latex="\chi_m"></span>
+                      <span class="chart__label-equals">=</span>
+                      <span id="p3-label-value" class="chart__label-value">30</span>
+                    </span>
+                  </label>
+                  <input id="p3-slider" type="range" min="0" max="100" step="1" value="30">
+                </div>
+              </div>
+              <div class="chart__control">
+                <div class="chart__control-row chart__control-row--aspect">
+                  <label for="p4-slider" class="chart__control-label--aspect">
+                    <span class="chart__label-text">Magnetic Prandtl number</span>
+                    <span class="chart__label-math">
+                      <span class="math-label" data-latex="\mathcal{P}_m"></span>
+                      <span class="chart__label-equals">=</span>
+                      <span id="p4-label-value" class="chart__label-value">60</span>
+                    </span>
+                  </label>
+                  <input id="p4-slider" type="range" min="0" max="100" step="1" value="60">
+                </div>
+              </div>
+              <div class="chart__control">
+                <div class="chart__control-row chart__control-row--aspect">
+                  <label for="p5-slider" class="chart__control-label--aspect">
+                    <span class="chart__label-text">Turbulent magnetic pressure</span>
+                    <span class="chart__label-math">
+                      <span class="math-label" data-latex="\alpha_p"></span>
+                      <span class="chart__label-equals">=</span>
+                      <span id="p5-label-value" class="chart__label-value">20</span>
+                    </span>
+                  </label>
+                  <input id="p5-slider" type="range" min="0" max="100" step="1" value="20">
+                </div>
+              </div>
+              <div class="chart__control">
+                <div class="chart__control-row chart__control-row--dropdowns">
+                  <div class="chart__dropdown">
+                    <label for="turbulence-profile-select" class="chart__dropdown-label">Turbulence profile</label>
+                    <select id="turbulence-profile-select" class="chart__select chart__select--profile" aria-label="Choisir un profil de turbulence">
+                      <option value="exponential-decrease">Gaussian</option>
+                    </select>
+                  </div>
+                  <div class="chart__dropdown">
+                    <label for="heat-profile-select" class="chart__dropdown-label">Heat profile</label>
+                    <select id="heat-profile-select" class="chart__select chart__select--profile" aria-label="Choisir un profil de chaleur">
+                      <option value="isothermal">Isothermal</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="chart__control">
+                <div class="chart__control-row chart__control-row--toggles">
+                  <div class="chart__toggle-group">
+                    <span class="chart__dropdown-label">Solution type</span>
+                    <div class="chart__button-row" role="group" aria-label="Choisir SM, A ou FM">
+                      <button type="button" class="chart__toggle-button chart__toggle-button--active" data-scenario="SM">SM</button>
+                      <button type="button" class="chart__toggle-button" data-scenario="A">A</button>
+                      <button type="button" class="chart__toggle-button" data-scenario="FM">FM</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chart__figure">
+          <div class="chart__plot" role="img" aria-label="Graphique en nuage de points">
+            <div class="chart__settings">
+              <button class="chart__settings-button" type="button" id="chart-settings-button" aria-label="Réglages" aria-expanded="false" aria-controls="chart-settings-panel">
+                <span class="chart__settings-icon chart__settings-icon--gear" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                    <path d="M 18.426 12.846c 0.036 -0.279 0.054 -0.567 0.054 -0.846s -0.018 -0.567 -0.063 -0.846l 1.827 -1.422a 0.45 0.45 0 0 0 0.108 -0.576l -1.728 -2.988a 0.45 0.45 0 0 0 -0.54 -0.198l -2.151 0.864a 6.318 6.318 0 0 0 -1.467 -0.846l -0.324 -2.286a 0.45 0.45 0 0 0 -0.45 -0.378h -3.456a 0.45 0.45 0 0 0 -0.45 0.378l -0.324 2.286a 6.39 6.39 0 0 0 -1.467 0.846l -2.151 -0.864a 0.45 0.45 0 0 0 -0.54 0.198L 3.666 9.156a 0.45 0.45 0 0 0 0.108 0.576l 1.827 1.422c -0.045 0.279 -0.063 0.567 -0.063 0.846s 0.018 0.567 0.063 0.846l -1.827 1.422a 0.45 0.45 0 0 0 -0.108 0.576l 1.728 2.988a 0.45 0.45 0 0 0 0.54 0.198l 2.151 -0.864c 0.45 0.351 0.945 0.639 1.467 0.846l 0.324 2.286a 0.45 0.45 0 0 0 0.45 0.378h 3.456a 0.45 0.45 0 0 0 0.45 -0.378l 0.324 -2.286c 0.522 -0.207 1.017 -0.495 1.467 -0.846l 2.151 0.864a 0.45 0.45 0 0 0 0.54 -0.198l 1.728 -2.988a 0.45 0.45 0 0 0 -0.108 -0.576l -1.827 -1.422ZM 12 15.15A 3.15 3.15 0 1 1 12 8.85a 3.15 3.15 0 0 1 0 6.3Z"></path>
+                  </svg>
+                </span>
+              </button>
+              <button class="chart__settings-button chart__download-button" type="button" aria-label="Télécharger">
+                <span class="chart__settings-icon chart__settings-icon--download" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                    <path d="M12 3v9"></path>
+                    <path d="M8 10l4 4 4-4"></path>
+                    <rect x="4" y="17" width="16" height="4" rx="1" ry="1"></rect>
+                  </svg>
+                </span>
+              </button>
+              <div class="chart__settings-panel" id="chart-settings-panel" role="group" aria-label="Réglages des axes" hidden>
+                <div class="chart__settings-row">
+                  <label class="chart__settings-label" for="x-scale-select">X-axis</label>
+                  <div class="chart__settings-controls">
+                    <select id="x-axis-settings-select" class="chart__select chart__select--profile chart__select--axis" data-axis-settings="x" aria-label="Grandeur de l'axe X"></select>
+                    <select id="x-scale-select" class="chart__select chart__select--scale" data-scale-select="x" aria-label="Échelle de l'axe X">
+                      <option value="linear">Linear</option>
+                      <option value="log">Logarithmic</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="chart__settings-row">
+                  <label class="chart__settings-label" for="y-scale-select">Y-axis</label>
+                  <div class="chart__settings-controls">
+                    <select id="y-axis-settings-select" class="chart__select chart__select--profile chart__select--axis" data-axis-settings="y" aria-label="Grandeur de l'axe Y"></select>
+                    <select id="y-scale-select" class="chart__select chart__select--scale" data-scale-select="y" aria-label="Échelle de l'axe Y">
+                      <option value="linear">Linear</option>
+                      <option value="log">Logarithmic</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chart__plot-area"></div>
+            <div id="scatter-tooltip" class="chart__sparkline-tooltip chart__scatter-tooltip" role="status" aria-live="polite"></div>
+            <div class="chart__axis-label chart__axis-label--y" aria-label="Grandeur de l'axe Y">
+              <span id="y-axis-label" class="chart__axis-label-text"></span>
+            </div>
+            <div class="chart__axis-label chart__axis-label--x" aria-label="Grandeur de l'axe X">
+              <span id="x-axis-label" class="chart__axis-label-text"></span>
+            </div>
+          </div>
+        </div>
+        <div class="chart__hovered chart__hovered--solution" aria-live="polite">
+          <div class="chart__hovered-header">
+            <div>
+              <p class="chart__eyebrow chart__eyebrow--sub">MHD Solution</p>
+            </div>
+          </div>
+          <div id="hovered-values" class="chart__hovered-body">
+            <ul class="chart__hovered-list">
+              <li class="chart__hovered-title">Input parameters</li>
+              <li class="chart__hovered-item chart__control-label--aspect">
+                <span class="chart__label-text">Aspect ratio</span>
+                <span class="chart__label-math">
+                  <span class="math-label" data-latex="\varepsilon"></span>
+                  <span class="chart__label-equals">=</span>
+                  <span class="chart__label-value">―</span>
+                </span>
+              </li>
+              <li class="chart__hovered-item chart__control-label--aspect">
+                <span class="chart__label-text">Magnetic diffusivity</span>
+                <span class="chart__label-math">
+                  <span class="math-label" data-latex="\alpha_m"></span>
+                  <span class="chart__label-equals">=</span>
+                  <span class="chart__label-value">―</span>
+                </span>
+              </li>
+              <li class="chart__hovered-item chart__control-label--aspect">
+                <span class="chart__label-text">Magnetic diffusivity anisotropy</span>
+                <span class="chart__label-math">
+                  <span class="math-label" data-latex="\chi_m"></span>
+                  <span class="chart__label-equals">=</span>
+                  <span class="chart__label-value">―</span>
+                </span>
+              </li>
+              <li class="chart__hovered-item chart__control-label--aspect">
+                <span class="chart__label-text">Magnetic Prandtl number</span>
+                <span class="chart__label-math">
+                  <span class="math-label" data-latex="\mathcal{P}_m"></span>
+                  <span class="chart__label-equals">=</span>
+                  <span class="chart__label-value">―</span>
+                </span>
+              </li>
+              <li class="chart__hovered-item chart__control-label--aspect">
+                <span class="chart__label-text">Turbulent magnetic pressure</span>
+                <span class="chart__label-math">
+                  <span class="math-label" data-latex="\alpha_p"></span>
+                  <span class="chart__label-equals">=</span>
+                  <span class="chart__label-value">―</span>
+                </span>
+              </li>
+              <li class="chart__hovered-divider" role="separator" aria-hidden="true"></li>
+              <li class="chart__hovered-title">Disk properties</li>
+              <li class="chart__hovered-item chart__control-label--aspect">
+                <span class="chart__label-text">Ejection index</span>
+                <span class="chart__label-math">
+                  <span class="math-label" data-latex="\xi"></span>
+                  <span class="chart__label-equals">=</span>
+                  <span class="chart__label-value">―</span>
+                </span>
+              </li>
+              <li class="chart__hovered-item chart__control-label--aspect">
+                <span class="chart__label-text">Magnetization</span>
+                <span class="chart__label-math">
+                  <span class="math-label" data-latex="\mu"></span>
+                  <span class="chart__label-equals">=</span>
+                  <span class="chart__label-value">―</span>
+                </span>
+              </li>
+              <li class="chart__hovered-item chart__control-label--aspect">
+                <span class="chart__label-text">Toroidal electric current</span>
+                <span class="chart__label-math">
+                  <span class="math-label" data-latex="p"></span>
+                  <span class="chart__label-equals">=</span>
+                  <span class="chart__label-value">―</span>
+                </span>
+              </li>
+              <li class="chart__hovered-item chart__control-label--aspect">
+                <span class="chart__label-text">Radial electric current</span>
+                <span class="chart__label-math">
+                  <span class="math-label" data-latex="q"></span>
+                  <span class="chart__label-equals">=</span>
+                  <span class="chart__label-value">―</span>
+                </span>
+              </li>
+              <li class="chart__hovered-item chart__control-label--aspect">
+                <span class="chart__label-text">Rotation</span>
+                <span class="chart__label-math">
+                  <span class="math-label" data-latex="\delta"></span>
+                  <span class="chart__label-equals">=</span>
+                  <span class="chart__label-value">―</span>
+                </span>
+              </li>
+              <li class="chart__hovered-item chart__control-label--aspect">
+                <span class="chart__label-text">Sonic Mach number</span>
+                <span class="chart__label-math">
+                  <span class="math-label" data-latex="m_s"></span>
+                  <span class="chart__label-equals">=</span>
+                  <span class="chart__label-value">―</span>
+                </span>
+              </li>
+              <li class="chart__hovered-item chart__control-label--aspect">
+                <span class="chart__label-text">Turbulent viscosity</span>
+                <span class="chart__label-math">
+                  <span class="math-label" data-latex="\alpha_v"></span>
+                  <span class="chart__label-equals">=</span>
+                  <span class="chart__label-value">―</span>
+                </span>
+              </li>
+              <li class="chart__hovered-divider" role="separator" aria-hidden="true"></li>
+              <li class="chart__hovered-title">Outflow properties</li>
+              <li class="chart__hovered-item chart__control-label--aspect">
+                <span class="chart__label-text">Mass load</span>
+                <span class="chart__label-math">
+                  <span class="math-label" data-latex="\kappa"></span>
+                  <span class="chart__label-equals">=</span>
+                  <span class="chart__label-value">―</span>
+                </span>
+              </li>
+              <li class="chart__hovered-item chart__control-label--aspect">
+                <span class="chart__label-text">Magnetic lever arm</span>
+                <span class="chart__label-math">
+                  <span class="math-label" data-latex="\lambda"></span>
+                  <span class="chart__label-equals">=</span>
+                  <span class="chart__label-value">―</span>
+                </span>
+              </li>
+              <li class="chart__hovered-item chart__control-label--aspect">
+                <span class="chart__label-text">Magnetic surface rotation</span>
+                <span class="chart__label-math">
+                  <span class="math-label" data-latex="\omega_*"></span>
+                  <span class="chart__label-equals">=</span>
+                  <span class="chart__label-value">―</span>
+                </span>
+              </li>
+              <li class="chart__hovered-item chart__control-label--aspect">
+                <span class="chart__label-text">Bernoulli invariant</span>
+                <span class="chart__label-math">
+                  <span class="math-label" data-latex="e"></span>
+                  <span class="chart__label-equals">=</span>
+                  <span class="chart__label-value">―</span>
+                </span>
+              </li>
+              <li class="chart__hovered-item chart__control-label--aspect">
+                <span class="chart__label-text">SM point altitude</span>
+                <span class="chart__label-math">
+                  <span class="math-label" data-latex="z_{SM}"></span>
+                  <span class="chart__label-equals">=</span>
+                  <span class="chart__label-value">―</span>
+                </span>
+              </li>
+              <li class="chart__hovered-item chart__control-label--aspect">
+                <span class="chart__label-text">A point altitude</span>
+                <span class="chart__label-math">
+                  <span class="math-label" data-latex="z_A"></span>
+                  <span class="chart__label-equals">=</span>
+                  <span class="chart__label-value">―</span>
+                </span>
+              </li>
+              <li class="chart__hovered-item chart__control-label--aspect">
+                <span class="chart__label-text">FM point altitude</span>
+                <span class="chart__label-math">
+                  <span class="math-label" data-latex="z_{FM}"></span>
+                  <span class="chart__label-equals">=</span>
+                  <span class="chart__label-value">―</span>
+                </span>
+              </li>
+              <li class="chart__hovered-item chart__control-label--aspect">
+                <span class="chart__label-text">Outflow power fraction</span>
+                <span class="chart__label-math">
+                  <span class="math-label" data-latex="b"></span>
+                  <span class="chart__label-equals">=</span>
+                  <span class="chart__label-value">―</span>
+                </span>
+              </li>
+              <li class="chart__hovered-item chart__control-label--aspect">
+                <span class="chart__label-text">Maximum radius</span>
+                <span class="chart__label-math">
+                  <span class="math-label" data-latex="r_t"></span>
+                  <span class="chart__label-equals">=</span>
+                  <span class="chart__label-value">―</span>
+                </span>
+              </li>
+              <li class="chart__hovered-item chart__control-label--aspect">
+                <span class="chart__label-text">Energy reservoir</span>
+                <span class="chart__label-math">
+                  <span class="math-label" data-latex="g_A"></span>
+                  <span class="chart__label-equals">=</span>
+                  <span class="chart__label-value">―</span>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart__profiles" aria-live="polite">
+        <div class="chart__profiles-header">
+          <div>
+            <p class="chart__eyebrow chart__eyebrow--sub">1D Profiles</p>
+          </div>
+        </div>
+        <div id="profile-content" class="chart__profiles-grid">
+          <p class="chart__profiles-placeholder">Cliquez sur un point pour afficher les courbes correspondantes.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="faq" class="faq" aria-label="FAQ">
+    <div class="faq__card">
+      <div class="faq__header">
+        <h2 class="faq__title">Frequently Asked Questions</h2>
+      </div>
+      <div class="faq__list">
+        <details class="faq__item">
+          <summary>Question 1</summary>
+          <p>Answer 1</p>
+        </details>
+        <details class="faq__item">
+          <summary>Question 2</summary>
+          <p>Answer 2</p>
+        </details>
+        <details class="faq__item">
+          <summary>Question 3</summary>
+          <p>Answer 3</p>
+        </details>
+        <details class="faq__item">
+          <summary>Question 4</summary>
+          <p>Answer 4</p>
+        </details>
+        <details class="faq__item">
+          <summary>Question 5</summary>
+          <p>Answer 5</p>
+        </details>
+        <details class="faq__item">
+          <summary>Question 6</summary>
+          <p>Answer 6</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" aria-label="Contact">
+    <div class="contact__card">
+      <div class="contact__header">
+        <h2 class="contact__title">Contact</h2>
+        <p class="contact__intro">If you have any additional questions, do not hesitate to <a class="contact__link" href="mailto:maes@help.fr">contact us</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="profiles" class="footer">
+    <p>
+      © <span id="year"></span> Nathan Zimniak
+    </p>
+  </section>
+
+  <script>
+    const footerYear = document.getElementById('year');
+    if (footerYear) {
+      footerYear.textContent = new Date().getFullYear();
+    }
+    const chartContainer = document.querySelector('.chart__plot-area');
+    const chartControls = document.querySelector('.chart__controls');
+    const chartFigure = document.querySelector('.chart__figure');
+    const chartHovered = document.querySelector('.chart__hovered');
+    const chartPlot = document.querySelector('.chart__plot');
+    const scatterTooltip = document.getElementById('scatter-tooltip');
+    const chartProfiles = document.querySelector('.chart__profiles');
+    const chartSettingsButton = document.getElementById('chart-settings-button');
+    const chartSettingsPanel = document.getElementById('chart-settings-panel');
+    const profileContent = document.getElementById('profile-content');
+    const hoveredValues = document.getElementById('hovered-values');
+    const axisLabelElements = {
+      x: document.getElementById('x-axis-label'),
+      y: document.getElementById('y-axis-label'),
+    };
+    const scenarioButtons = Array.from(document.querySelectorAll('[data-scenario]'));
+    const scaleSelects = Array.from(document.querySelectorAll('[data-scale-select]'));
+    const profileSelects = Array.from(document.querySelectorAll('.chart__select--profile'));
+    const axisSelects = profileSelects.filter((select) => select.classList.contains('chart__select--axis'));
+    const profileLabelSelects = profileSelects.filter((select) => !select.classList.contains('chart__select--axis'));
+    const resizeObserver = 'ResizeObserver' in window
+      ? new ResizeObserver(() => updateChart())
+      : null;
+
+    const sliders = [
+      {
+        id: 'p1',
+        element: document.getElementById('p1-slider'),
+        labelValue: document.getElementById('p1-label-value')
+      },
+      {
+        id: 'p2',
+        element: document.getElementById('p2-slider'),
+        labelValue: document.getElementById('p2-label-value')
+      },
+      {
+        id: 'p3',
+        element: document.getElementById('p3-slider'),
+        labelValue: document.getElementById('p3-label-value')
+      },
+      {
+        id: 'p4',
+        element: document.getElementById('p4-slider'),
+        labelValue: document.getElementById('p4-label-value')
+      },
+      {
+        id: 'p5',
+        element: document.getElementById('p5-slider'),
+        labelValue: document.getElementById('p5-label-value')
+      },
+    ];
+    let xAxisKey = 'g1';
+    let yAxisKey = 'g2';
+    let xScaleType = 'linear';
+    let yScaleType = 'linear';
+    let selectedScenario = 'SM';
+    let currentSolutions = [];
+    let selectedSolutionIndex = null;
+    let pinnedSolutionIndex = null;
+    const customSelects = new Map();
+
+    const updateScaleSelectWidths = () => {
+      if (!scaleSelects.length) {
+        return;
+      }
+
+      const ruler = document.createElement('span');
+      ruler.setAttribute('aria-hidden', 'true');
+      ruler.style.position = 'absolute';
+      ruler.style.visibility = 'hidden';
+      ruler.style.whiteSpace = 'nowrap';
+      document.body.appendChild(ruler);
+
+      const referenceButton = scaleSelects
+        .map((select) => select.parentElement?.querySelector('.chart__latex-button'))
+        .find(Boolean);
+
+      const referenceStyles = window.getComputedStyle(referenceButton || scaleSelects[0]);
+      ruler.style.fontFamily = referenceStyles.fontFamily;
+      ruler.style.fontSize = referenceStyles.fontSize;
+      ruler.style.fontWeight = referenceStyles.fontWeight;
+      ruler.style.letterSpacing = referenceStyles.letterSpacing;
+
+      let maxTextWidth = 0;
+      scaleSelects.forEach((select) => {
+        Array.from(select.options).forEach((option) => {
+          ruler.textContent = option.textContent || '';
+          maxTextWidth = Math.max(maxTextWidth, ruler.getBoundingClientRect().width);
+        });
+      });
+
+      const paddingLeft = parseFloat(referenceStyles.paddingLeft) || 0;
+      const paddingRight = parseFloat(referenceStyles.paddingRight) || 0;
+      const borderLeft = parseFloat(referenceStyles.borderLeftWidth) || 0;
+      const borderRight = parseFloat(referenceStyles.borderRightWidth) || 0;
+      const gap = parseFloat(referenceStyles.columnGap || referenceStyles.gap) || 0;
+      const caretWidth = referenceButton?.querySelector('.chart__latex-button-caret')?.getBoundingClientRect().width || 0;
+      const targetWidth = Math.ceil(
+        maxTextWidth + paddingLeft + paddingRight + borderLeft + borderRight + gap + caretWidth
+      );
+
+      scaleSelects.forEach((select) => {
+        const wrapper = select.closest('.chart__latex-select');
+        if (wrapper) {
+          wrapper.style.width = `${targetWidth}px`;
+        }
+        select.style.width = `${targetWidth}px`;
+      });
+
+      document.body.removeChild(ruler);
+    };
+
+    const updateAxisSelectWidths = () => {
+      if (!axisSelects.length) {
+        return;
+      }
+
+      const ruler = document.createElement('span');
+      ruler.setAttribute('aria-hidden', 'true');
+      ruler.style.position = 'absolute';
+      ruler.style.visibility = 'hidden';
+      ruler.style.whiteSpace = 'nowrap';
+      document.body.appendChild(ruler);
+
+      const referenceButton = axisSelects
+        .map((select) => select.parentElement?.querySelector('.chart__latex-button'))
+        .find(Boolean);
+
+      const referenceStyles = window.getComputedStyle(referenceButton || axisSelects[0]);
+      ruler.style.fontFamily = referenceStyles.fontFamily;
+      ruler.style.fontSize = referenceStyles.fontSize;
+      ruler.style.fontWeight = referenceStyles.fontWeight;
+      ruler.style.letterSpacing = referenceStyles.letterSpacing;
+
+      let maxTextWidth = 0;
+      axisSelects.forEach((select) => {
+        Array.from(select.options).forEach((option) => {
+          ruler.textContent = option.textContent || '';
+          maxTextWidth = Math.max(maxTextWidth, ruler.getBoundingClientRect().width);
+        });
+      });
+
+      const paddingLeft = parseFloat(referenceStyles.paddingLeft) || 0;
+      const paddingRight = parseFloat(referenceStyles.paddingRight) || 0;
+      const borderLeft = parseFloat(referenceStyles.borderLeftWidth) || 0;
+      const borderRight = parseFloat(referenceStyles.borderRightWidth) || 0;
+      const gap = parseFloat(referenceStyles.columnGap || referenceStyles.gap) || 0;
+      const caretWidth = referenceButton?.querySelector('.chart__latex-button-caret')?.getBoundingClientRect().width || 0;
+      const targetWidth = Math.ceil(
+        maxTextWidth + paddingLeft + paddingRight + borderLeft + borderRight + gap + caretWidth
+      );
+
+      axisSelects.forEach((select) => {
+        const wrapper = select.closest('.chart__latex-select');
+        const button = wrapper?.querySelector('.chart__latex-button');
+        if (wrapper) {
+          wrapper.style.width = `${targetWidth}px`;
+        }
+        if (button) {
+          button.style.width = `${targetWidth}px`;
+        }
+        select.style.width = `${targetWidth}px`;
+      });
+
+      document.body.removeChild(ruler);
+    };
+
+    let width = 0;
+    let height = 0;
+    const outerMargin = 24;
+    const margin = {
+      top: outerMargin,
+      right: outerMargin,
+      bottom: outerMargin,
+      left: outerMargin
+    };
+
+    const svgNS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(svgNS, 'svg');
+    svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+    svg.setAttribute('role', 'presentation');
+
+    let innerWidth = 0;
+    let innerHeight = 0;
+
+    const gridGroup = document.createElementNS(svgNS, 'g');
+    gridGroup.classList.add('chart__grid');
+
+    svg.appendChild(gridGroup);
+
+    const axesGroup = document.createElementNS(svgNS, 'g');
+    axesGroup.classList.add('chart__axes');
+    svg.appendChild(axesGroup);
+
+    const ticksGroup = document.createElementNS(svgNS, 'g');
+    ticksGroup.classList.add('chart__ticks');
+    svg.appendChild(ticksGroup);
+
+    const tickLabelsGroup = document.createElementNS(svgNS, 'g');
+    tickLabelsGroup.classList.add('chart__tick-labels');
+    svg.appendChild(tickLabelsGroup);
+
+    const pointsGroup = document.createElementNS(svgNS, 'g');
+    svg.appendChild(pointsGroup);
+
+    chartContainer.appendChild(svg);
+
+    function resizeChart() {
+      const chartBody = document.querySelector('.chart__body');
+      if (chartControls && chartBody) {
+        const controlsHeight = chartControls.offsetHeight;
+        chartBody.style.setProperty('--chart-controls-height', `${controlsHeight}px`);
+        const bodyStyles = window.getComputedStyle(chartBody);
+        const shouldSyncHeights = bodyStyles.flexDirection !== 'column';
+        if (shouldSyncHeights) {
+          if (chartFigure) {
+            chartFigure.style.height = `${controlsHeight}px`;
+            chartFigure.style.maxHeight = `${controlsHeight}px`;
+          }
+          if (chartHovered) {
+            chartHovered.style.height = `${controlsHeight}px`;
+            chartHovered.style.maxHeight = `${controlsHeight}px`;
+          }
+        } else {
+          if (chartFigure) {
+            chartFigure.style.height = '';
+            chartFigure.style.maxHeight = '';
+          }
+          if (chartHovered) {
+            chartHovered.style.height = '';
+            chartHovered.style.maxHeight = '';
+          }
+        }
+      }
+      if (chartBody && chartProfiles) {
+        chartProfiles.style.width = `${chartBody.offsetWidth}px`;
+      }
+
+      width = chartContainer.clientWidth || 720;
+      height = chartContainer.clientHeight || 320;
+      const plotSize = Math.min(width, height);
+      const offsetX = (width - plotSize) / 2;
+      const offsetY = (height - plotSize) / 2;
+
+      margin.left = outerMargin + offsetX;
+      margin.right = outerMargin + offsetX;
+      margin.top = outerMargin + offsetY;
+      margin.bottom = outerMargin + offsetY;
+
+      innerWidth = width - margin.left - margin.right;
+      innerHeight = height - margin.top - margin.bottom;
+
+      svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+
+      if (chartPlot) {
+        chartPlot.style.removeProperty('--plot-area-pad-x');
+        chartPlot.style.removeProperty('--plot-area-pad-y');
+        chartPlot.style.removeProperty('--scatter-plot-x');
+        chartPlot.style.removeProperty('--scatter-plot-y');
+        chartPlot.style.removeProperty('--axis-x-select-x');
+        chartPlot.style.removeProperty('--axis-x-select-y');
+        chartPlot.style.removeProperty('--axis-y-select-x');
+        chartPlot.style.removeProperty('--axis-y-select-y');
+      }
+
+    }
+
+    function createScale(domain, scaleType, axis) {
+      const normalize = scaleType === 'log'
+        ? (value) => Math.log10(Math.max(value, domain.min))
+        : (value) => value;
+
+      const start = normalize(domain.min);
+      const end = normalize(domain.max);
+      const span = end - start || 1;
+
+      return (value) => {
+        const position = (normalize(value) - start) / span;
+        return axis === 'x'
+          ? margin.left + position * innerWidth
+          : margin.top + innerHeight - position * innerHeight;
+      };
+    }
+
+    function clamp(value, min, max) {
+      return Math.min(Math.max(value, min), max);
+    }
+
+    function buildProfiles(base) {
+      const sampleCount = 24;
+      const xValues = Array.from({ length: sampleCount }, (_, i) => Number(((i / (sampleCount - 1)) * 10).toFixed(2)));
+      const scenarioShift = base.scenario === 'A' ? 6 : base.scenario === 'FM' ? -4 : 0;
+      const magneticShift = base.scenario === 'A' ? 0.4 : base.scenario === 'FM' ? -0.3 : 0;
+
+      const pressure = xValues.map((x) => {
+        return clamp(85 + scenarioShift + 0.5 * base.p1 - 0.3 * base.p3 + Math.sin(x / 1.8 + base.p2 / 60) * 9 + (Math.random() - 0.5) * 2, 40, 180);
+      });
+
+      const density = xValues.map((x) => {
+        return clamp(0.9 + 0.012 * base.p2 + scenarioShift / 60 + Math.cos(x / 2.4 + base.p5 / 35) * 0.25 + (Math.random() - 0.5) * 0.04, 0.6, 2.4);
+      });
+
+      const temperature = xValues.map((x) => {
+        return clamp(260 + 0.75 * base.p4 + scenarioShift * 1.5 + Math.sin((x + base.p3 / 6) / 2.8) * 14 + (Math.random() - 0.5) * 4, 230, 420);
+      });
+
+      const radialVelocity = xValues.map((x) => {
+        return clamp(-12 + 0.25 * base.p1 - 0.18 * base.p2 + scenarioShift * 0.35 + Math.sin((x + base.p4 / 8) / 2.3) * 6 + (Math.random() - 0.5) * 1.5, -40, 40);
+      });
+
+      const toroidalVelocity = xValues.map((x) => {
+        return clamp(80 + 0.9 * base.p4 + 0.3 * base.p5 + scenarioShift * 1.6 + Math.cos((x + base.p3 / 5) / 2.1) * 18 + (Math.random() - 0.5) * 3, 40, 200);
+      });
+
+      const verticalVelocity = xValues.map((x) => {
+        return clamp(10 + 0.4 * base.p2 + 0.2 * base.p3 + scenarioShift * 0.9 + Math.sin((x + base.p1 / 10) / 2.6) * 8 + (Math.random() - 0.5) * 2, 0, 80);
+      });
+
+      const radialMagneticField = xValues.map((x) => {
+        return clamp(1.2 + 0.02 * base.p2 + magneticShift + Math.cos((x + base.p3 / 10) / 2.2) * 0.4 + (Math.random() - 0.5) * 0.08, 0.2, 3.2);
+      });
+
+      const toroidalMagneticField = xValues.map((x) => {
+        return clamp(2.8 + 0.03 * base.p4 + magneticShift * 1.2 + Math.sin((x + base.p1 / 12) / 2.6) * 0.7 + (Math.random() - 0.5) * 0.12, 0.6, 5.2);
+      });
+
+      const verticalMagneticField = xValues.map((x) => {
+        return clamp(0.8 + 0.018 * base.p5 + magneticShift * 0.6 + Math.cos((x + base.p2 / 14) / 2.4) * 0.3 + (Math.random() - 0.5) * 0.07, 0.1, 2.4);
+      });
+
+      return {
+        x: xValues,
+        pressure,
+        density,
+        temperature,
+        radialVelocity,
+        toroidalVelocity,
+        verticalVelocity,
+        radialMagneticField,
+        toroidalMagneticField,
+        verticalMagneticField,
+      };
+    }
+
+    function buildSolutions(baseParams, scenario) {
+      const solutions = [];
+      const sampleCount = 26;
+      const numericParams = Object.fromEntries(
+        Object.entries(baseParams).filter(([key]) => key.startsWith('p'))
+      );
+      const scenarioOffset = scenario === 'A' ? 12 : scenario === 'FM' ? -8 : 0;
+
+      for (let i = 0; i < sampleCount; i++) {
+        const jittered = Object.fromEntries(
+          Object.entries(numericParams).map(([key, base]) => [
+            key,
+            clamp(base + (Math.random() - 0.5) * 14, 0, 100)
+          ])
+        );
+
+        const { p1, p2, p3, p4, p5 } = jittered;
+        const noise = (span) => (Math.random() - 0.5) * span;
+
+        const g1 = 0.6 * p1 + 0.4 * p2 + 5 * Math.sin(p3 / 18) + scenarioOffset + noise(8);
+        const g2 = 1.05 * p2 + 0.25 * p3 + scenarioOffset * 0.6 + noise(10);
+        const g3 = 0.5 * p3 + 0.8 * p4 + 12 * Math.cos(p1 / 30) + scenarioOffset * 0.8 + noise(9);
+        const g4 = 0.9 * p4 + 0.2 * p1 + scenarioOffset * 0.4 + noise(7);
+        const g5 = 0.7 * p5 + 0.35 * p2 + scenarioOffset * 0.2 + noise(7);
+        const g6 = 0.8 * p1 + 0.5 * p3 - 0.3 * p5 + 40 + scenarioOffset + noise(12);
+        const g7 = 0.6 * p2 + 0.6 * p5 + scenarioOffset * 0.5 + noise(10);
+        const g8 = 0.4 * p3 + 0.9 * p4 + scenarioOffset * 0.4 + noise(8);
+        const g9 = 0.5 * p1 + 0.5 * p4 + scenarioOffset * 0.3 + noise(6);
+        const g10 = 0.7 * p2 + 0.2 * p3 + 0.4 * p5 + scenarioOffset * 0.5 + noise(10);
+        const g11 = 0.35 * p1 + 0.65 * p2 + 0.15 * p4 + scenarioOffset * 0.4 + noise(9);
+        const g12 = 0.2 * p2 + 0.85 * p3 + 0.1 * p5 + 20 + scenarioOffset * 0.3 + noise(11);
+        const g13 = 0.55 * p4 + 0.45 * p5 + 5 * Math.cos(p2 / 22) + scenarioOffset * 0.5 + noise(8);
+        const g14 = 0.4 * p1 + 0.25 * p3 + 0.35 * p5 + 15 + scenarioOffset * 0.2 + noise(10);
+        const g15 = 0.6 * p2 + 0.25 * p4 + 0.2 * p5 + 8 * Math.sin(p1 / 28) + scenarioOffset * 0.6 + noise(9);
+        const g16 = 0.45 * p1 + 0.55 * p4 + 0.2 * p5 + 18 + scenarioOffset * 0.4 + noise(10);
+        const g17 = 0.3 * p2 + 0.6 * p3 + 0.4 * p5 + 12 * Math.cos(p4 / 30) + scenarioOffset * 0.5 + noise(9);
+        const g18 = 0.5 * p1 + 0.3 * p3 + 0.7 * p4 + scenarioOffset * 0.3 + noise(8);
+        const g19 = 0.65 * p2 + 0.2 * p4 + 0.25 * p5 + 10 * Math.sin(p3 / 26) + scenarioOffset * 0.4 + noise(11);
+        const g20 = 0.4 * p1 + 0.4 * p2 + 0.4 * p3 + 10 + scenarioOffset * 0.2 + noise(10);
+        const g21 = 0.3 * p1 + 0.7 * p2 + 0.25 * p5 + 6 * Math.cos(p1 / 20) + scenarioOffset * 0.3 + noise(9);
+        const g22 = 0.5 * p3 + 0.2 * p4 + 0.6 * p5 + 14 + scenarioOffset * 0.4 + noise(10);
+
+        const solution = { ...jittered, scenario };
+
+        solutions.push({
+          ...solution,
+          profiles: buildProfiles(solution),
+          g1: clamp(g1, 0, 200),
+          g2: clamp(g2, 0, 200),
+          g3: clamp(g3, 0, 200),
+          g4: clamp(g4, 0, 200),
+          g5: clamp(g5, 0, 200),
+          g6: clamp(g6, 0, 200),
+          g7: clamp(g7, 0, 200),
+          g8: clamp(g8, 0, 200),
+          g9: clamp(g9, 0, 200),
+          g10: clamp(g10, 0, 200),
+          g11: clamp(g11, 0, 200),
+          g12: clamp(g12, 0, 200),
+          g13: clamp(g13, 0, 200),
+          g14: clamp(g14, 0, 200),
+          g15: clamp(g15, 0, 200),
+          g16: clamp(g16, 0, 200),
+          g17: clamp(g17, 0, 200),
+          g18: clamp(g18, 0, 200),
+          g19: clamp(g19, 0, 200),
+          g20: clamp(g20, 0, 200),
+          g21: clamp(g21, 0, 200),
+          g22: clamp(g22, 0, 200)
+        });
+      }
+
+      return solutions;
+    }
+
+    function getDomain(values, scaleType = 'linear') {
+      const min = Math.min(...values);
+      const max = Math.max(...values);
+
+      if (scaleType === 'log') {
+        const positives = values.filter((value) => value > 0);
+        const smallestPositive = positives.length ? Math.min(...positives) : Math.max(min, 0.1);
+        const safeMin = Math.max(smallestPositive, 0.1);
+        const paddedMin = safeMin / 1.4;
+        const paddedMax = Math.max(max, safeMin * 10) * 1.05;
+        return { min: paddedMin, max: paddedMax };
+      }
+
+      const span = max - min;
+      const padding = Math.max(span * 0.08, 4);
+      return { min: min - padding, max: max + padding };
+    }
+
+    function buildTicks(domain, scaleType = 'linear', tickCount = 5) {
+      if (scaleType === 'log') {
+        const ticks = [];
+        const startExp = Math.floor(Math.log10(domain.min));
+        const endExp = Math.ceil(Math.log10(domain.max));
+
+        for (let exp = startExp; exp <= endExp; exp++) {
+          const value = 10 ** exp;
+          if (value >= domain.min && value <= domain.max) {
+            ticks.push(value);
+          }
+        }
+
+        if (!ticks.includes(domain.max)) {
+          ticks.push(domain.max);
+        }
+
+        return ticks;
+      }
+
+      return Array.from({ length: tickCount + 1 }, (_, i) => domain.min + (domain.max - domain.min) * (i / tickCount));
+    }
+
+    function formatTick(value) {
+      return Math.abs(value) >= 100 ? value.toFixed(0) : value.toFixed(1);
+    }
+
+    function renderAxes(xDomain, yDomain, xScale, yScale, xType, yType, xTicks, yTicks) {
+      gridGroup.innerHTML = '';
+      axesGroup.innerHTML = '';
+      ticksGroup.innerHTML = '';
+      tickLabelsGroup.innerHTML = '';
+
+      const resolvedXTicks = xTicks ?? buildTicks(xDomain, xType);
+      const resolvedYTicks = yTicks ?? buildTicks(yDomain, yType);
+
+      const axisX = document.createElementNS(svgNS, 'line');
+      axisX.setAttribute('x1', margin.left);
+      axisX.setAttribute('x2', margin.left + innerWidth);
+      axisX.setAttribute('y1', margin.top + innerHeight);
+      axisX.setAttribute('y2', margin.top + innerHeight);
+      axesGroup.appendChild(axisX);
+
+      const axisY = document.createElementNS(svgNS, 'line');
+      axisY.setAttribute('x1', margin.left);
+      axisY.setAttribute('x2', margin.left);
+      axisY.setAttribute('y1', margin.top);
+      axisY.setAttribute('y2', margin.top + innerHeight);
+      axesGroup.appendChild(axisY);
+
+      resolvedXTicks.forEach((xValue) => {
+        const xPos = xScale(xValue);
+        const gridLine = document.createElementNS(svgNS, 'line');
+        gridLine.setAttribute('x1', xPos);
+        gridLine.setAttribute('x2', xPos);
+        gridLine.setAttribute('y1', margin.top);
+        gridLine.setAttribute('y2', margin.top + innerHeight);
+        gridGroup.appendChild(gridLine);
+
+        const tick = document.createElementNS(svgNS, 'line');
+        tick.setAttribute('x1', xPos);
+        tick.setAttribute('x2', xPos);
+        tick.setAttribute('y1', margin.top + innerHeight);
+        tick.setAttribute('y2', margin.top + innerHeight + 6);
+        ticksGroup.appendChild(tick);
+
+        const label = document.createElementNS(svgNS, 'text');
+        label.setAttribute('x', xPos);
+        label.setAttribute('y', margin.top + innerHeight + 18);
+        label.setAttribute('text-anchor', 'middle');
+        label.textContent = formatTick(xValue);
+        tickLabelsGroup.appendChild(label);
+      });
+
+      resolvedYTicks.forEach((yValue) => {
+        const yPos = yScale(yValue);
+        const gridLine = document.createElementNS(svgNS, 'line');
+        gridLine.setAttribute('x1', margin.left);
+        gridLine.setAttribute('x2', margin.left + innerWidth);
+        gridLine.setAttribute('y1', yPos);
+        gridLine.setAttribute('y2', yPos);
+        gridGroup.appendChild(gridLine);
+
+        const tick = document.createElementNS(svgNS, 'line');
+        tick.setAttribute('x1', margin.left - 6);
+        tick.setAttribute('x2', margin.left);
+        tick.setAttribute('y1', yPos);
+        tick.setAttribute('y2', yPos);
+        ticksGroup.appendChild(tick);
+
+        const label = document.createElementNS(svgNS, 'text');
+        label.setAttribute('x', margin.left - 10);
+        label.setAttribute('y', yPos + 4);
+        label.setAttribute('text-anchor', 'end');
+        label.textContent = formatTick(yValue);
+        tickLabelsGroup.appendChild(label);
+      });
+    }
+
+    function renderMathLabels(scope = document) {
+      if (!window.katex) return;
+
+      scope.querySelectorAll('.math-label').forEach((element) => {
+        const latex = element.dataset.latex;
+        if (!latex) return;
+
+        window.katex.render(latex, element, { throwOnError: false });
+      });
+    }
+
+    const hoveredMetricLabels = {
+      g1: { label: 'Aspect ratio', latex: '\\varepsilon', symbol: 'ε' },
+      g2: { label: 'Magnetic diffusivity', latex: '\\alpha_m', symbol: 'αₘ' },
+      g3: { label: 'Magnetic diffusivity anisotropy', latex: '\\chi_m', symbol: 'χₘ' },
+      g4: { label: 'Magnetic Prandtl number', latex: '\\mathcal{P}_m', symbol: '𝒫ₘ' },
+      g5: { label: 'Turbulent magnetic pressure', latex: '\\alpha_p', symbol: 'αₚ' },
+      g6: { label: 'Ejection index', latex: '\\xi', symbol: 'ξ' },
+      g7: { label: 'Magnetization', latex: '\\mu', symbol: 'μ' },
+      g8: { label: 'Toroidal electric current', latex: 'p', symbol: 'p' },
+      g9: { label: 'Radial electric current', latex: 'q', symbol: 'q' },
+      g10: { label: 'Rotation', latex: '\\delta', symbol: 'δ' },
+      g11: { label: 'Sonic Mach number', latex: 'm_s', symbol: 'mₛ' },
+      g12: { label: 'Turbulent viscosity', latex: '\\alpha_v', symbol: 'αᵥ' },
+      g13: { label: 'Mass load', latex: '\\kappa', symbol: 'κ' },
+      g14: { label: 'Magnetic lever arm', latex: '\\lambda', symbol: 'λ' },
+      g15: { label: 'Magnetic surface rotation', latex: '\\omega_*', symbol: 'ω*' },
+      g16: { label: 'Bernoulli invariant', latex: 'e', symbol: 'e' },
+      g17: { label: 'SM point altitude', latex: 'z_{SM}', symbol: 'zSM' },
+      g18: { label: 'A point altitude', latex: 'z_A', symbol: 'zA' },
+      g19: { label: 'FM point altitude', latex: 'z_{FM}', symbol: 'zFM' },
+      g20: { label: 'Outflow power fraction', latex: 'b', symbol: 'b' },
+      g21: { label: 'Maximum radius', latex: 'r_t', symbol: 'rₜ' },
+      g22: { label: 'Energy reservoir', latex: 'g_A', symbol: 'g_A' }
+    };
+
+    function populateAxisSelectOptions() {
+      axisSelects.forEach((select) => {
+        select.innerHTML = '';
+        const entries = Object.keys(hoveredMetricLabels)
+          .sort((a, b) => Number(a.slice(1)) - Number(b.slice(1)));
+
+        entries.forEach((key) => {
+          const { label, latex, symbol } = getHoveredMetricLabel(key);
+          const option = document.createElement('option');
+          option.value = key;
+          option.dataset.name = label;
+          option.dataset.latex = latex;
+          option.textContent = symbol || key.toUpperCase();
+          select.appendChild(option);
+        });
+      });
+
+      const xSelect = axisSelects.find((select) => select.dataset.axisSettings === 'x');
+      const ySelect = axisSelects.find((select) => select.dataset.axisSettings === 'y');
+      if (xSelect) {
+        xSelect.value = xAxisKey;
+      }
+      if (ySelect) {
+        ySelect.value = yAxisKey;
+      }
+    }
+
+    function getHoveredMetricLabel(key) {
+      const fallbackIndex = Number(key.slice(1));
+      return hoveredMetricLabels[key] ?? {
+        label: `Grandeur ${fallbackIndex}`,
+        latex: '\\varepsilon',
+        symbol: key.toUpperCase()
+      };
+    }
+
+    function getMetricLatex(key) {
+      return getHoveredMetricLabel(key).latex ?? key.toUpperCase();
+    }
+
+    function updateCustomSelectDisplay(select) {
+      const state = customSelects.get(select);
+      if (!state) return;
+
+      const { buttonLabel, menu, renderLabel, usesMath } = state;
+      renderLabel(buttonLabel, select);
+
+      if (usesMath) {
+        renderMathLabels(buttonLabel);
+      }
+
+      if (menu) {
+        Array.from(menu.querySelectorAll('[data-value]')).forEach((item) => {
+          item.classList.toggle('chart__latex-option--selected', item.dataset.value === select.value);
+        });
+        if (usesMath) {
+          renderMathLabels(menu);
+        }
+      }
+    }
+
+    function closeCustomMenus() {
+      customSelects.forEach(({ menu }, select) => {
+        const button = menu?.previousElementSibling;
+        if (menu) {
+          menu.classList.remove('chart__latex-menu--open');
+        }
+        if (button && button.classList.contains('chart__latex-button')) {
+          button.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    function closeSettingsPanel() {
+      if (!chartSettingsPanel || !chartSettingsButton) return;
+      chartSettingsPanel.hidden = true;
+      chartSettingsButton.setAttribute('aria-expanded', 'false');
+    }
+
+    function toggleSettingsPanel() {
+      if (!chartSettingsPanel || !chartSettingsButton) return;
+      const shouldOpen = chartSettingsPanel.hidden;
+      chartSettingsPanel.hidden = !shouldOpen;
+      chartSettingsButton.setAttribute('aria-expanded', String(shouldOpen));
+      if (shouldOpen) {
+        requestAnimationFrame(() => {
+          updateScaleSelectWidths();
+          updateAxisSelectWidths();
+        });
+      }
+    }
+
+    function buildCustomSelect(select, { renderLabel, renderOption, usesMath = false, wrapperClass = '' }) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'chart__latex-select';
+      if (wrapperClass) {
+        wrapper.classList.add(wrapperClass);
+      }
+
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'chart__latex-button';
+      button.setAttribute('aria-haspopup', 'listbox');
+      button.setAttribute('aria-expanded', 'false');
+
+      const buttonLabel = document.createElement('span');
+      buttonLabel.className = 'chart__latex-button-label';
+      button.appendChild(buttonLabel);
+
+      const caret = document.createElement('span');
+      caret.className = 'chart__latex-button-caret';
+      caret.innerHTML = '<svg viewBox="0 0 12 8" aria-hidden="true" focusable="false"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
+      button.appendChild(caret);
+
+      const menu = document.createElement('div');
+      menu.className = 'chart__latex-menu';
+      menu.setAttribute('role', 'listbox');
+
+      Array.from(select.options).forEach((option) => {
+        const item = document.createElement('button');
+        item.type = 'button';
+        item.className = 'chart__latex-option';
+        item.dataset.value = option.value;
+        renderOption(item, option);
+        item.addEventListener('click', () => {
+          select.value = option.value;
+          select.dispatchEvent(new Event('change', { bubbles: true }));
+          menu.classList.remove('chart__latex-menu--open');
+          button.setAttribute('aria-expanded', 'false');
+        });
+        menu.appendChild(item);
+      });
+
+      button.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const wasOpen = menu.classList.contains('chart__latex-menu--open');
+        closeCustomMenus();
+        if (wasOpen) {
+          return;
+        }
+        menu.classList.add('chart__latex-menu--open');
+        button.setAttribute('aria-expanded', 'true');
+      });
+
+      wrapper.appendChild(button);
+      wrapper.appendChild(menu);
+
+      select.classList.add('chart__latex-select-native');
+      select.parentNode.insertBefore(wrapper, select);
+      wrapper.appendChild(select);
+
+      customSelects.set(select, { buttonLabel, menu, renderLabel, usesMath });
+      updateCustomSelectDisplay(select);
+    }
+
+    document.addEventListener('click', () => {
+      closeCustomMenus();
+    });
+
+    function buildHoveredList(entries, valueFormatter) {
+      const rows = entries
+        .reduce((acc, key, index) => {
+          const sectionTitles = {
+            1: "Input parameters",
+            6: "Disk properties",
+            13: "Outflow properties",
+          };
+          const entryIndex = index + 1;
+          if (sectionTitles[entryIndex]) {
+            if (acc.length) {
+              acc.push('<li class="chart__hovered-divider" role="separator" aria-hidden="true"></li>');
+            }
+            acc.push(`<li class="chart__hovered-title">${sectionTitles[entryIndex]}</li>`);
+          }
+          const { label, latex } = getHoveredMetricLabel(key);
+          const value = valueFormatter(key);
+          acc.push(`
+          <li class="chart__hovered-item chart__control-label--aspect">
+            <span class="chart__label-text">${label}</span>
+            <span class="chart__label-math">
+              <span class="math-label" data-latex="${latex}"></span>
+              <span class="chart__label-equals">=</span>
+              <span class="chart__label-value">${value}</span>
+            </span>
+          </li>
+        `);
+          return acc;
+        }, [])
+        .join('');
+
+      return `
+        <ul class="chart__hovered-list">
+          ${rows}
+        </ul>
+      `;
+    }
+
+    function renderHoveredValues(solution) {
+      if (!hoveredValues || !solution) return;
+
+      const previousList = hoveredValues.querySelector('.chart__hovered-list');
+      const previousScrollTop = previousList ? previousList.scrollTop : 0;
+      const entries = Object.entries(solution)
+        .filter(([key]) => key.startsWith('g'))
+        .sort(([a], [b]) => Number(a.slice(1)) - Number(b.slice(1)))
+        .map(([key]) => key);
+
+      hoveredValues.innerHTML = buildHoveredList(entries, (key) => solution[key].toFixed(1));
+      renderMathLabels(hoveredValues);
+      const nextList = hoveredValues.querySelector('.chart__hovered-list');
+      if (nextList) {
+        nextList.scrollTop = previousScrollTop;
+      }
+    }
+
+    function renderEmptyHoveredValues() {
+      if (!hoveredValues) return;
+
+      const previousList = hoveredValues.querySelector('.chart__hovered-list');
+      const previousScrollTop = previousList ? previousList.scrollTop : 0;
+      const entries = Array.from({ length: 22 }, (_, index) => `g${index + 1}`);
+      hoveredValues.innerHTML = buildHoveredList(entries, () => '―');
+      renderMathLabels(hoveredValues);
+      const nextList = hoveredValues.querySelector('.chart__hovered-list');
+      if (nextList) {
+        nextList.scrollTop = previousScrollTop;
+      }
+    }
+
+    function resetHoveredValues() {
+      renderEmptyHoveredValues();
+    }
+
+    function hideScatterTooltip() {
+      if (!scatterTooltip) return;
+      scatterTooltip.classList.remove('chart__sparkline-tooltip--visible');
+    }
+
+    function showScatterTooltip(point, circle, xKey, yKey) {
+      if (!scatterTooltip || !chartPlot || !circle || !point) return;
+
+      const xLatex = getMetricLatex(xKey);
+      const yLatex = getMetricLatex(yKey);
+      scatterTooltip.innerHTML = `
+        <div class="chart__sparkline-tooltip-row">
+          <span class="chart__sparkline-tooltip-pair">
+            <span class="chart__sparkline-tooltip-key">
+              <span class="math-label" data-latex="${yLatex}"></span>
+            </span>
+            <span class="chart__sparkline-tooltip-value">${formatTick(point[yKey])}</span>
+          </span>
+          <span class="chart__sparkline-tooltip-pair">
+            <span class="chart__sparkline-tooltip-key">
+              <span class="math-label" data-latex="${xLatex}"></span>
+            </span>
+            <span class="chart__sparkline-tooltip-value">${formatTick(point[xKey])}</span>
+          </span>
+        </div>
+      `;
+      renderMathLabels(scatterTooltip);
+
+      const plotBounds = chartPlot.getBoundingClientRect();
+      const circleBounds = circle.getBoundingClientRect();
+      const centerX = circleBounds.left - plotBounds.left + circleBounds.width / 2;
+      const centerY = circleBounds.top - plotBounds.top + circleBounds.height / 2;
+      const tooltipWidth = scatterTooltip.offsetWidth || 140;
+      const tooltipHeight = scatterTooltip.offsetHeight || 42;
+      const tooltipPadding = 6;
+      const desiredLeft = centerX - tooltipWidth / 2;
+      const desiredTop = centerY - tooltipHeight - 20;
+      const minLeft = tooltipPadding;
+      const maxLeft = Math.max(minLeft, plotBounds.width - tooltipWidth - tooltipPadding);
+      const minTop = tooltipPadding;
+      const maxTop = Math.max(minTop, plotBounds.height - tooltipHeight - tooltipPadding);
+
+      scatterTooltip.style.left = `${clamp(desiredLeft, minLeft, maxLeft)}px`;
+      scatterTooltip.style.top = `${clamp(desiredTop, minTop, maxTop)}px`;
+      scatterTooltip.classList.add('chart__sparkline-tooltip--visible');
+    }
+
+    function restorePinnedValues() {
+      if (pinnedSolutionIndex === null) {
+        resetHoveredValues();
+        return;
+      }
+
+      const pinned = currentSolutions[pinnedSolutionIndex];
+      if (pinned) {
+        renderHoveredValues(pinned);
+      } else {
+        resetHoveredValues();
+      }
+    }
+
+    function renderPoints(points, xKey, yKey, scaleX, scaleY) {
+      pointsGroup.innerHTML = '';
+      points.forEach((point, index) => {
+        const circle = document.createElementNS(svgNS, 'circle');
+        circle.classList.add('chart__point');
+        circle.setAttribute('cx', scaleX(point[xKey]));
+        circle.setAttribute('cy', scaleY(point[yKey]));
+        circle.setAttribute('r', 5);
+        circle.dataset.solutionIndex = index;
+        circle.setAttribute('tabindex', '0');
+
+        if (index === selectedSolutionIndex) {
+          circle.classList.add('chart__point--selected');
+        }
+
+        circle.addEventListener('pointerenter', () => {
+          const hovered = currentSolutions[Number(circle.dataset.solutionIndex)];
+          renderHoveredValues(hovered);
+          showScatterTooltip(hovered, circle, xKey, yKey);
+        });
+
+        circle.addEventListener('pointermove', () => {
+          const hovered = currentSolutions[Number(circle.dataset.solutionIndex)];
+          showScatterTooltip(hovered, circle, xKey, yKey);
+        });
+
+        circle.addEventListener('pointerleave', () => {
+          restorePinnedValues();
+          hideScatterTooltip();
+        });
+
+        circle.addEventListener('focus', () => {
+          const hovered = currentSolutions[Number(circle.dataset.solutionIndex)];
+          showScatterTooltip(hovered, circle, xKey, yKey);
+        });
+
+        circle.addEventListener('blur', () => {
+          restorePinnedValues();
+          hideScatterTooltip();
+        });
+
+        circle.addEventListener('click', () => {
+          selectSolution(index);
+        });
+
+        circle.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            selectSolution(index);
+          }
+        });
+
+        pointsGroup.appendChild(circle);
+      });
+    }
+
+    function buildProfileChart(xValues, yValues, width = 320, height = 200, yDomainOverride = null) {
+      const padding = { top: 10, right: 16, bottom: 36, left: 40 };
+      const xMin = Math.min(...xValues);
+      const xMax = Math.max(...xValues);
+      const computedYMin = Math.min(...yValues);
+      const computedYMax = Math.max(...yValues);
+      const rawYMin = yDomainOverride?.min ?? computedYMin;
+      const rawYMax = yDomainOverride?.max ?? computedYMax;
+      const xRange = xMax - xMin || 1;
+      const rawYRange = rawYMax - rawYMin || 1;
+      const yPadding = Math.max(rawYRange * 0.08, Math.abs(rawYMin) * 0.02, Math.abs(rawYMax) * 0.02, 1);
+      const yMin = rawYMin - yPadding;
+      const yMax = rawYMax + yPadding;
+      const yRange = yMax - yMin || 1;
+      const plotWidth = width - padding.left - padding.right;
+      const plotHeight = height - padding.top - padding.bottom;
+      const step = xRange / (xValues.length - 1 || 1);
+
+      const xScale = (x) => padding.left + ((x - xMin) / xRange) * plotWidth;
+      const yScale = (y) => padding.top + plotHeight - ((y - yMin) / yRange) * plotHeight;
+
+      const pointPairs = xValues.map((x, idx) => ({
+        x: xScale(x),
+        y: yScale(yValues[idx]),
+      }));
+      const points = pointPairs.map((point) => `${point.x},${point.y}`).join(' ');
+      const baselineY = height - padding.bottom;
+      const areaPath = pointPairs.length
+        ? `${pointPairs
+          .map((point, index) => `${index === 0 ? 'M' : 'L'}${point.x},${point.y}`)
+          .join(' ')} L ${pointPairs[pointPairs.length - 1].x},${baselineY} L ${pointPairs[0].x},${baselineY} Z`
+        : '';
+
+      const yMid = (yMin + yMax) / 2;
+      const yTicks = [yMin, yMid, yMax];
+      const xTicks = Array.from({ length: 4 }, (_, index) => xMin + xRange * (index / 3));
+      const xGridTicks = xTicks;
+
+      return {
+        width,
+        height,
+        padding,
+        points,
+        areaPath,
+        xTicks,
+        yTicks,
+        xGridTicks,
+        yGridTicks: yTicks,
+        format: (value) => formatTick(value),
+        xScale,
+        yScale,
+        xMin,
+        xMax,
+        plotWidth,
+        plotHeight,
+        step,
+      };
+    }
+
+    function clampIndex(value, max) {
+      return Math.min(Math.max(value, 0), max);
+    }
+
+    function attachSparklineHover({ sparkline, sparklineGrid, tooltip, marker, chart, xValues, yValues, yLabelLatex = 'y' }) {
+      if (!sparkline || !tooltip || !marker || !chart) return;
+
+      const updateHover = (event) => {
+        const bounds = sparkline.getBoundingClientRect();
+        const wrapperBounds = sparkline.parentElement?.getBoundingClientRect() || bounds;
+        const gridBounds = sparklineGrid?.getBoundingClientRect() || bounds;
+        const gridBox = sparklineGrid?.getBBox?.() || {
+          x: chart.padding.left,
+          y: chart.padding.top,
+          width: chart.plotWidth,
+          height: chart.plotHeight,
+        };
+        const gridOffsetX = gridBounds.left - wrapperBounds.left;
+        const gridOffsetY = gridBounds.top - wrapperBounds.top;
+        const gridScaleX = gridBox.width ? gridBounds.width / gridBox.width : bounds.width / chart.width;
+        const gridScaleY = gridBox.height ? gridBounds.height / gridBox.height : bounds.height / chart.height;
+        const svgPoint = sparkline.createSVGPoint();
+        svgPoint.x = event.clientX;
+        svgPoint.y = event.clientY;
+        const ctm = sparkline.getScreenCTM();
+        if (!ctm) return;
+        const transformed = svgPoint.matrixTransform(ctm.inverse());
+        const gridXMin = gridBox.x;
+        const gridXMax = gridBox.x + gridBox.width;
+        const localX = clamp(transformed.x, gridXMin, gridXMax);
+        const xValue = chart.xMin + ((localX - gridXMin) / (gridBox.width || 1)) * (chart.xMax - chart.xMin);
+        const rawIndex = (xValue - chart.xMin) / chart.step;
+        const lowerIndex = clampIndex(Math.floor(rawIndex), xValues.length - 1);
+        const upperIndex = clampIndex(Math.ceil(rawIndex), xValues.length - 1);
+        const span = xValues[upperIndex] - xValues[lowerIndex] || 1;
+        const t = (xValue - xValues[lowerIndex]) / span;
+        const interpolatedY = yValues[lowerIndex] + t * (yValues[upperIndex] - yValues[lowerIndex]);
+        const markerX = chart.xScale(xValue);
+        const markerY = chart.yScale(interpolatedY);
+
+        marker.setAttribute('cx', markerX);
+        marker.setAttribute('cy', markerY);
+        marker.classList.add('chart__sparkline-marker--visible');
+
+        tooltip.innerHTML = `
+          <div class="chart__sparkline-tooltip-row">
+            <span class="chart__sparkline-tooltip-pair">
+              <span class="chart__sparkline-tooltip-key">
+                <span class="math-label" data-latex="${yLabelLatex}"></span>
+              </span>
+              <span class="chart__sparkline-tooltip-value">${chart.format(interpolatedY)}</span>
+            </span>
+            <span class="chart__sparkline-tooltip-pair">
+              <span class="chart__sparkline-tooltip-key">
+                <span class="math-label" data-latex="x"></span>
+              </span>
+              <span class="chart__sparkline-tooltip-value">${xValue.toFixed(2)}</span>
+            </span>
+          </div>
+        `;
+        renderMathLabels(tooltip);
+
+        const tooltipWidth = tooltip.offsetWidth || 140;
+        const tooltipHeight = tooltip.offsetHeight || 42;
+        const markerLeft = gridOffsetX + (markerX - gridBox.x) * gridScaleX;
+        const markerTop = gridOffsetY + (markerY - gridBox.y) * gridScaleY;
+        const desiredLeft = markerLeft - tooltipWidth / 2;
+        const desiredTop = markerTop - tooltipHeight - 12;
+        const tooltipPadding = 4;
+        const minLeft = gridOffsetX + tooltipPadding;
+        const maxLeft = Math.max(minLeft, gridOffsetX + gridBounds.width - tooltipWidth - tooltipPadding);
+        const minTop = gridOffsetY + tooltipPadding;
+        const maxTop = Math.max(minTop, gridOffsetY + gridBounds.height - tooltipHeight - tooltipPadding);
+
+        tooltip.style.left = `${clamp(desiredLeft, minLeft, maxLeft)}px`;
+        tooltip.style.top = `${clamp(desiredTop, minTop, maxTop)}px`;
+        tooltip.classList.add('chart__sparkline-tooltip--visible');
+      };
+
+      const clearHover = () => {
+        marker.classList.remove('chart__sparkline-marker--visible');
+        tooltip.classList.remove('chart__sparkline-tooltip--visible');
+      };
+
+      sparkline.addEventListener('pointerenter', updateHover);
+      sparkline.addEventListener('pointermove', updateHover);
+      sparkline.addEventListener('pointerleave', clearHover);
+      sparkline.addEventListener('blur', clearHover);
+    }
+
+    function renderProfiles(solution, options = {}) {
+      const { profiles } = solution;
+      const profileCurveColor = '#60708f';
+      const series = [
+        { label: '<span class="chart__profile-title-text">Thermal pressure</span><span class="chart__profile-title-math"><span class="math-label" data-latex="P"></span></span>', ariaLabel: 'Thermal pressure (P)', key: 'pressure', color: profileCurveColor, tooltipSymbol: 'P' },
+        { label: '<span class="chart__profile-title-text">Density</span><span class="chart__profile-title-math"><span class="math-label" data-latex="\\rho"></span></span>', ariaLabel: 'Density (rho)', key: 'density', color: profileCurveColor, tooltipSymbol: '\\rho' },
+        { label: '<span class="chart__profile-title-text">Temperature</span><span class="chart__profile-title-math"><span class="math-label" data-latex="T"></span></span>', ariaLabel: 'Temperature (T)', key: 'temperature', color: profileCurveColor, tooltipSymbol: 'T' },
+        { label: '<span class="chart__profile-title-text">Radial velocity</span><span class="chart__profile-title-math"><span class="math-label" data-latex="u_r"></span></span>', ariaLabel: 'Radial velocity (u_r)', key: 'radialVelocity', color: profileCurveColor, tooltipSymbol: 'u_r' },
+        { label: '<span class="chart__profile-title-text">Toroidal velocity</span><span class="chart__profile-title-math"><span class="math-label" data-latex="u_\\phi"></span></span>', ariaLabel: 'Toroidal velocity (u_phi)', key: 'toroidalVelocity', color: profileCurveColor, tooltipSymbol: 'u_\\phi' },
+        { label: '<span class="chart__profile-title-text">Vertical velocity</span><span class="chart__profile-title-math"><span class="math-label" data-latex="u_z"></span></span>', ariaLabel: 'Vertical velocity (u_z)', key: 'verticalVelocity', color: profileCurveColor, tooltipSymbol: 'u_z' },
+        { label: '<span class="chart__profile-title-text">Radial magnetic field</span><span class="chart__profile-title-math"><span class="math-label" data-latex="B_r"></span></span>', ariaLabel: 'Radial magnetic field (B_r)', key: 'radialMagneticField', color: profileCurveColor, tooltipSymbol: 'B_r' },
+        { label: '<span class="chart__profile-title-text">Toroidal magnetic field</span><span class="chart__profile-title-math"><span class="math-label" data-latex="B_{\\phi}"></span></span>', ariaLabel: 'Toroidal magnetic field (B_phi)', key: 'toroidalMagneticField', color: profileCurveColor, tooltipSymbol: 'B_{\\phi}' },
+        { label: '<span class="chart__profile-title-text">Vertical magnetic field</span><span class="chart__profile-title-math"><span class="math-label" data-latex="B_z"></span></span>', ariaLabel: 'Vertical magnetic field (B_z)', key: 'verticalMagneticField', color: profileCurveColor, tooltipSymbol: 'B_z' },
+      ];
+
+      const previousScrollLeft = profileContent?.scrollLeft ?? 0;
+      profileContent.innerHTML = '';
+      const sparklineHeight = 200;
+
+      series.forEach((serie) => {
+        const values = profiles[serie.key];
+
+        const card = document.createElement('div');
+        card.className = 'chart__profile-card';
+        card.innerHTML = `
+          <div class="chart__profile-header">
+            <div>
+              <div class="chart__profile-title">${serie.label}</div>
+            </div>
+          </div>
+          <div class="chart__sparkline-wrapper"></div>
+        `;
+
+        profileContent.appendChild(card);
+
+        const sparklineWrapper = card.querySelector('.chart__sparkline-wrapper');
+        const wrapperWidth = sparklineWrapper?.getBoundingClientRect().width ?? 0;
+        const chartWidth = Math.max(1, Math.floor(wrapperWidth || 320));
+        const chart = buildProfileChart(profiles.x, values, chartWidth, sparklineHeight, options.yDomainOverride ?? null);
+
+        const gradientId = `sparkline-gradient-${serie.key}`;
+
+        sparklineWrapper.innerHTML = `
+          <svg class="chart__sparkline" viewBox="0 0 ${chart.width} ${chart.height}" role="img" aria-label="${serie.ariaLabel}">
+            <defs>
+              <linearGradient id="${gradientId}" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="${profileCurveColor}" stop-opacity="0.1"></stop>
+                <stop offset="100%" stop-color="${profileCurveColor}" stop-opacity="0"></stop>
+              </linearGradient>
+            </defs>
+            <g class="chart__sparkline-grid" aria-hidden="true">
+              ${chart.yGridTicks.map((tick) => `
+                <line x1="${chart.padding.left}" y1="${chart.padding.top + ((chart.yGridTicks[2] - tick) / (chart.yGridTicks[2] - chart.yGridTicks[0] || 1)) * (chart.height - chart.padding.top - chart.padding.bottom)}"
+                      x2="${chart.width - chart.padding.right}" y2="${chart.padding.top + ((chart.yGridTicks[2] - tick) / (chart.yGridTicks[2] - chart.yGridTicks[0] || 1)) * (chart.height - chart.padding.top - chart.padding.bottom)}"></line>
+              `).join('')}
+              ${chart.xGridTicks.map((tick) => `
+                <line x1="${chart.padding.left + ((tick - chart.xGridTicks[0]) / (chart.xGridTicks[chart.xGridTicks.length - 1] - chart.xGridTicks[0] || 1)) * (chart.width - chart.padding.left - chart.padding.right)}"
+                      y1="${chart.padding.top}" x2="${chart.padding.left + ((tick - chart.xGridTicks[0]) / (chart.xGridTicks[chart.xGridTicks.length - 1] - chart.xGridTicks[0] || 1)) * (chart.width - chart.padding.left - chart.padding.right)}"
+                      y2="${chart.height - chart.padding.bottom}"></line>
+              `).join('')}
+            </g>
+            <g class="chart__sparkline-axes" aria-hidden="true">
+              <line x1="${chart.padding.left}" y1="${chart.padding.top}" x2="${chart.padding.left}" y2="${chart.height - chart.padding.bottom}"></line>
+              <line x1="${chart.padding.left}" y1="${chart.height - chart.padding.bottom}" x2="${chart.width - chart.padding.right}" y2="${chart.height - chart.padding.bottom}"></line>
+              ${chart.yTicks.map((tick) => `
+                <line x1="${chart.padding.left - 4}" y1="${chart.padding.top + ((chart.yTicks[2] - tick) / (chart.yTicks[2] - chart.yTicks[0] || 1)) * (chart.height - chart.padding.top - chart.padding.bottom)}"
+                      x2="${chart.padding.left}" y2="${chart.padding.top + ((chart.yTicks[2] - tick) / (chart.yTicks[2] - chart.yTicks[0] || 1)) * (chart.height - chart.padding.top - chart.padding.bottom)}"></line>
+              `).join('')}
+              ${chart.xTicks.map((tick) => `
+                <line x1="${chart.padding.left + ((tick - chart.xTicks[0]) / (chart.xTicks[chart.xTicks.length - 1] - chart.xTicks[0] || 1)) * (chart.width - chart.padding.left - chart.padding.right)}"
+                      y1="${chart.height - chart.padding.bottom}" x2="${chart.padding.left + ((tick - chart.xTicks[0]) / (chart.xTicks[chart.xTicks.length - 1] - chart.xTicks[0] || 1)) * (chart.width - chart.padding.left - chart.padding.right)}"
+                      y2="${chart.height - chart.padding.bottom + 4}"></line>
+              `).join('')}
+            </g>
+            <g class="chart__sparkline-labels" aria-hidden="true">
+              ${chart.yTicks.map((tick) => `
+                <text x="${chart.padding.left - 8}" y="${chart.padding.top + ((chart.yTicks[2] - tick) / (chart.yTicks[2] - chart.yTicks[0] || 1)) * (chart.height - chart.padding.top - chart.padding.bottom) + 4}" text-anchor="end">
+                  ${chart.format(tick)}
+                </text>
+              `).join('')}
+              ${chart.xTicks.map((tick) => `
+                <text x="${chart.padding.left + ((tick - chart.xTicks[0]) / (chart.xTicks[chart.xTicks.length - 1] - chart.xTicks[0] || 1)) * (chart.width - chart.padding.left - chart.padding.right)}"
+                      y="${chart.height - chart.padding.bottom + 18}" text-anchor="middle">
+                  ${chart.format(tick)}
+                </text>
+              `).join('')}
+              <foreignObject class="chart__sparkline-axis-label" x="${chart.width / 2 - 24}" y="${chart.height - chart.padding.bottom + 18}" width="48" height="16">
+                <div xmlns="http://www.w3.org/1999/xhtml" class="chart__sparkline-axis-label-text">
+                  <span class="math-label" data-latex="x"></span>
+                </div>
+              </foreignObject>
+            </g>
+            <path class="chart__sparkline-area" d="${chart.areaPath}" fill="url(#${gradientId})"></path>
+            <polyline class="chart__sparkline-line" fill="none" stroke="${serie.color}" stroke-width="2" points="${chart.points}" />
+            <circle class="chart__sparkline-marker" r="4" cx="0" cy="0"></circle>
+          </svg>
+          <div class="chart__sparkline-tooltip" role="status" aria-live="polite"></div>
+        `;
+
+        const sparkline = card.querySelector('.chart__sparkline');
+        const sparklineGrid = card.querySelector('.chart__sparkline-grid');
+        const tooltip = card.querySelector('.chart__sparkline-tooltip');
+        const marker = card.querySelector('.chart__sparkline-marker');
+        attachSparklineHover({
+          sparkline,
+          sparklineGrid,
+          tooltip,
+          marker,
+          chart,
+          xValues: profiles.x,
+          yValues: values,
+          yLabelLatex: serie.tooltipSymbol,
+        });
+      });
+
+      renderMathLabels(profileContent);
+      if (profileContent) {
+        profileContent.scrollLeft = previousScrollLeft;
+      }
+    }
+
+    function renderFlatProfiles() {
+      const fallbackX = Array.from({ length: 24 }, (_, index) => index);
+      const baseProfiles = currentSolutions[0]?.profiles;
+      const xValues = baseProfiles?.x ?? fallbackX;
+      const flatValues = xValues.map(() => 0);
+
+      renderProfiles({
+        profiles: {
+          x: xValues,
+          pressure: flatValues,
+          density: flatValues,
+          temperature: flatValues,
+          radialVelocity: flatValues,
+          toroidalVelocity: flatValues,
+          verticalVelocity: flatValues,
+          radialMagneticField: flatValues,
+          toroidalMagneticField: flatValues,
+          verticalMagneticField: flatValues,
+        },
+      }, {
+        yDomainOverride: { min: 0, max: 1 },
+      });
+    }
+
+    function selectSolution(index) {
+      selectedSolutionIndex = index;
+      pinnedSolutionIndex = index;
+      renderProfiles(currentSolutions[index]);
+      renderHoveredValues(currentSolutions[index]);
+
+      Array.from(pointsGroup.children).forEach((circle, idx) => {
+        circle.classList.toggle('chart__point--selected', idx === index);
+      });
+    }
+
+    function resetProfiles() {
+      selectedSolutionIndex = null;
+      pinnedSolutionIndex = null;
+      renderFlatProfiles();
+    }
+
+    function updateScaleSelect(axis, scaleType) {
+      const select = scaleSelects.find((option) => option.dataset.scaleSelect === axis);
+      if (!select) return;
+
+      select.value = scaleType;
+      updateCustomSelectDisplay(select);
+    }
+
+    function syncAxisSelect(axis, value, sourceSelect) {
+      const targetSelects = axisSelects.filter((select) => select.dataset.axisSettings === axis);
+      targetSelects.forEach((select) => {
+        if (select === sourceSelect) return;
+        select.value = value;
+        updateCustomSelectDisplay(select);
+      });
+      updateAxisLabel(axis);
+    }
+
+    function updateAxisLabel(axis) {
+      const select = axisSelects.find((option) => option.dataset.axisSettings === axis);
+      const label = axisLabelElements[axis];
+      if (!select || !label) return;
+
+      const selectedOption = select.options[select.selectedIndex];
+      const name = selectedOption?.dataset.name || selectedOption?.textContent || select.value;
+      const latex = selectedOption?.dataset.latex;
+
+      label.innerHTML = `
+        <span class="chart__axis-label-name">${name}</span>
+        <span class="chart__axis-label-symbol">
+          ${latex ? `<span class="math-label" data-latex="${latex}"></span>` : ''}
+        </span>
+      `;
+      renderMathLabels(label);
+    }
+
+    function updateChart() {
+      const baseParams = sliders.reduce((acc, slider) => {
+        const value = Number(slider.element.value);
+        if (slider.labelValue) {
+          slider.labelValue.textContent = value.toFixed(0);
+        }
+        acc[slider.id] = value;
+        return acc;
+      }, {});
+
+      const xKey = xAxisKey;
+      const yKey = yAxisKey;
+      const solutions = buildSolutions(baseParams, selectedScenario);
+      currentSolutions = solutions;
+      resetProfiles();
+      restorePinnedValues();
+      hideScatterTooltip();
+
+      const xDomain = getDomain(solutions.map(solution => solution[xKey]), xScaleType);
+      const yDomain = getDomain(solutions.map(solution => solution[yKey]), yScaleType);
+      const xTicks = buildTicks(xDomain, xScaleType);
+      const yTicks = buildTicks(yDomain, yScaleType);
+
+      resizeChart();
+
+      const xScale = createScale(xDomain, xScaleType, 'x');
+      const yScale = createScale(yDomain, yScaleType, 'y');
+
+      renderAxes(xDomain, yDomain, xScale, yScale, xScaleType, yScaleType, xTicks, yTicks);
+      renderPoints(solutions, xKey, yKey, xScale, yScale);
+    }
+
+    sliders.forEach(({ element }) => element.addEventListener('input', updateChart));
+
+    scaleSelects.forEach((select) => {
+      select.addEventListener('change', () => {
+        const axis = select.dataset.scaleSelect;
+        const nextScale = select.value;
+
+        if (axis === 'x') {
+          xScaleType = nextScale;
+        }
+
+        if (axis === 'y') {
+          yScaleType = nextScale;
+        }
+
+        updateCustomSelectDisplay(select);
+        updateChart();
+      });
+    });
+
+    profileSelects.forEach((select) => {
+      select.addEventListener('change', () => {
+        updateCustomSelectDisplay(select);
+      });
+    });
+
+    axisSelects.forEach((select) => {
+      select.addEventListener('change', () => {
+        const axis = select.dataset.axisSettings || (select.id.startsWith('x-') ? 'x' : 'y');
+        syncAxisSelect(axis, select.value, select);
+        if (axis === 'x') {
+          xAxisKey = select.value;
+        } else if (axis === 'y') {
+          yAxisKey = select.value;
+        }
+        updateChart();
+      });
+    });
+
+    populateAxisSelectOptions();
+
+    scaleSelects.forEach((select) => {
+      buildCustomSelect(select, {
+        renderLabel: (label, select) => {
+          const selectedOption = select.options[select.selectedIndex];
+          label.textContent = selectedOption ? selectedOption.textContent : select.value;
+        },
+        renderOption: (item, option) => {
+          item.textContent = option.textContent;
+        },
+      });
+    });
+    profileLabelSelects.forEach((select) => {
+      buildCustomSelect(select, {
+        renderLabel: (label, select) => {
+          const selectedOption = select.options[select.selectedIndex];
+          label.textContent = selectedOption ? selectedOption.textContent : select.value;
+        },
+        renderOption: (item, option) => {
+          item.textContent = option.textContent;
+        },
+      });
+    });
+
+    axisSelects.forEach((select) => {
+      buildCustomSelect(select, {
+        usesMath: true,
+        renderLabel: (label, select) => {
+          const selectedOption = select.options[select.selectedIndex];
+          const latex = selectedOption?.dataset.latex;
+          label.innerHTML = latex
+            ? `<span class="math-label" data-latex="${latex}"></span>`
+            : (selectedOption ? selectedOption.textContent : select.value);
+        },
+        renderOption: (item, option) => {
+          const latex = option.dataset.latex;
+          item.innerHTML = latex
+            ? `<span class="math-label" data-latex="${latex}"></span>`
+            : option.textContent;
+        },
+      });
+    });
+
+    updateScaleSelectWidths();
+    updateAxisSelectWidths();
+    updateScaleSelect('x', xScaleType);
+    updateScaleSelect('y', yScaleType);
+    updateAxisLabel('x');
+    updateAxisLabel('y');
+
+    scenarioButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const scenario = button.dataset.scenario;
+        if (scenario === selectedScenario) return;
+
+        selectedScenario = scenario;
+        scenarioButtons.forEach((btn) => {
+          btn.classList.toggle('chart__toggle-button--active', btn === button);
+        });
+        updateChart();
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      updateScaleSelectWidths();
+      updateAxisSelectWidths();
+      updateChart();
+    });
+
+    document.addEventListener('click', () => {
+      closeCustomMenus();
+      closeSettingsPanel();
+    });
+
+    if (chartSettingsButton && chartSettingsPanel) {
+      chartSettingsButton.addEventListener('click', (event) => {
+        event.stopPropagation();
+        toggleSettingsPanel();
+      });
+
+      chartSettingsPanel.addEventListener('click', (event) => {
+        event.stopPropagation();
+        closeCustomMenus();
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          closeSettingsPanel();
+          closeCustomMenus();
+        }
+      });
+    }
+
+    updateChart();
+
+    if (resizeObserver && chartControls) {
+      resizeObserver.observe(chartControls);
+    }
+
+    window.addEventListener('load', () => {
+      renderMathLabels();
+
+      updateScaleSelectWidths();
+      updateAxisSelectWidths();
+      updateChart();
+    });
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(() => {
+        updateScaleSelectWidths();
+        updateAxisSelectWidths();
+      });
+    }
+  </script>
+</body>
+</html>
