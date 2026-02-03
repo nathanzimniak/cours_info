@@ -6,7 +6,9 @@
   --bg-alt: #171a21;
   --text: #e6e6e6;
   --muted: #a5adba;
-  --accent: #7aa2f7;
+  --accent-0: rgba(122, 162, 247, 1);
+  --accent-1: rgba(122, 162, 247, 0.5);
+  --accent-1: rgba(122, 162, 247, 0.05);
   --border: #2a2f3a;
 }
 
@@ -43,7 +45,7 @@ a {
 }
 
 a:hover {
-  color: var(--accent);
+  color: var(--accent-0);
 }
 
 .site-header {
@@ -91,7 +93,7 @@ a:hover {
 }
 
 .header-nav a[aria-current="page"] {
-  color: var(--accent);
+  color: var(--accent-0);
 }
 
 .header-right {
@@ -117,13 +119,13 @@ a:hover {
 }
 
 .icon-link:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--accent-0);
+  color: var(--accent-0);
   transform: translateY(-1px);
 }
 
 .icon-link:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--accent-0);
   outline-offset: 2px;
 }
 
@@ -158,8 +160,8 @@ a:hover {
   position: sticky;
   top: 6.5rem;
   align-self: start;
-  background: rgba(122, 162, 247, 0.05);
-  border: 1px solid var(--border);
+  background: var(--accent-2);
+  border: 1px solid var(--accent-1);
   padding: 1.5rem;
   border-radius: 12px;
 }
@@ -191,12 +193,12 @@ a:hover {
 .side-nav a:hover,
 .side-nav a:focus-visible {
   background: rgba(122, 162, 247, 0.16);
-  color: var(--accent);
+  color: var(--accent-0);
 }
 
 .side-nav a.is-active {
-  background: rgba(122, 162, 247, 0.05);
-  color: var(--accent);
+  background: var(--accent-2);
+  color: var(--accent-0);
 }
 
 .content {
@@ -265,13 +267,13 @@ code {
 }
 
 .copy-button:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--accent-0);
+  color: var(--accent-0);
   transform: translateY(-1px);
 }
 
 .copy-button:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--accent-0);
   outline-offset: 2px;
 }
 
@@ -293,8 +295,8 @@ code {
 }
 
 .language-python {
-  background: rgba(122, 162, 247, 0.05);
-  border-color: rgba(122, 162, 247, 0.5);
+  background: var(--accent-2);
+  border-color: var(--accent-1);
 }
 
 .language-python .token-keyword {
