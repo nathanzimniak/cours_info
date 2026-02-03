@@ -177,7 +177,7 @@ a:hover {
   margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--muted);
+  color: var(--accent-0);
 }
 
 .side-nav ul {
