@@ -155,7 +155,7 @@ a:hover {
 }
 
 pre {
-  margin-top: 1rem;
+  margin: 1rem 0rem;
   padding: 1.25rem;
   background: #0b0d12;
   border: 1px solid var(--border);
