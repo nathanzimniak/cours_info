@@ -324,7 +324,7 @@ code {
 }
 
 .language-matlab {
-  background: #111a1a;
+  background: var(--accent-2);
 }
 
 .language-matlab .token-keyword {
@@ -348,7 +348,7 @@ code {
 }
 
 .language-fortran {
-  background: #1a121f;
+  background: var(--accent-2);
 }
 
 .language-fortran .token-keyword {
