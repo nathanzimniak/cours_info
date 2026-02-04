@@ -103,6 +103,11 @@ a:hover {
   color: var(--accent-0);
 }
 
+.header-nav a:not([aria-current="page"]):hover,
+.header-nav a:not([aria-current="page"]):focus-visible {
+  color: #ffffff;
+}
+
 .header-right {
   display: flex;
   justify-content: flex-end;
