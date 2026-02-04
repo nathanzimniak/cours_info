@@ -313,7 +313,7 @@ code {
 .language-python,
 .language-matlab,
 .language-fortran {
-  background: #0d1117;
+  background: var(--accent-2);
 }
 
 .language-python .token-keyword,
