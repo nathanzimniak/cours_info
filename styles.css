@@ -105,7 +105,7 @@ a:hover {
 
 .header-nav a:not([aria-current="page"]):hover,
 .header-nav a:not([aria-current="page"]):focus-visible {
-  color: #ffffff;
+  color: var(--text);
 }
 
 .header-right {
