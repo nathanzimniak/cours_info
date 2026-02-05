@@ -203,6 +203,10 @@ a:hover {
     transform 0.2s ease;
 }
 
+.side-nav .sub-item a {
+  padding-left: 1.5rem;
+}
+
 .side-nav a:hover,
 .side-nav a:focus-visible {
   background: var(--accent-2);
