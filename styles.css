@@ -278,6 +278,10 @@ code {
   font-size: 0.95em;
 }
 
+.section-spacing {
+  height: 24px;
+}
+
 .copy-button {
   position: absolute;
   top: 0.65rem;
