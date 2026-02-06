@@ -204,21 +204,7 @@ a:hover {
 
 .side-nav summary {
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
   list-style: none;
-}
-
-.side-nav summary::before {
-  content: "▶";
-  font-size: 0.7rem;
-  color: var(--accent-1);
-  transition: transform 0.2s ease;
-}
-
-.side-nav details[open] summary::before {
-  transform: rotate(90deg);
 }
 
 .side-nav summary::-webkit-details-marker {
@@ -231,12 +217,28 @@ a:hover {
 
 .side-nav summary span {
   display: block;
+  position: relative;
   color: var(--text);
   font-weight: 500;
-  padding: 0.4rem 0.5rem;
+  padding: 0.4rem 0.5rem 0.4rem 1.6rem;
   border-radius: 8px;
   transition: background-color 0.2s ease, color 0.2s ease,
     transform 0.2s ease;
+}
+
+.side-nav summary span::before {
+  content: "▶";
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  color: var(--accent-1);
+  transition: transform 0.2s ease;
+}
+
+.side-nav details[open] summary span::before {
+  transform: translateY(-50%) rotate(90deg);
 }
 
 .side-nav summary:hover span,
