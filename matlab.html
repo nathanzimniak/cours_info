@@ -58,7 +58,15 @@
     <aside class="side-nav">
       <h2>Sommaire</h2>
       <ul>
-        <li><a href="#introduction">Introduction à Matlab</a></li>
+        <li>
+          <a href="#introduction">Introduction à Matlab</a>
+          <ul>
+            <li><a href="#historique">Historique</a></li>
+            <li><a href="#philosophie">Philosophie</a></li>
+            <li><a href="#avantages-limites">Avantages et limites</a></li>
+            <li><a href="#cas-usage">Cas d’usage courants</a></li>
+          </ul>
+        </li>
         <li>
           <a href="#fondamentaux">Fondamentaux de Matlab</a>
           <ul>
@@ -108,6 +116,8 @@
             </p>
           </section>
 
+          <div class="section-spacing" aria-hidden="true"></div>
+
           <section id="philosophie">
             <h3>Philosophie</h3>
             <p>
@@ -118,6 +128,8 @@
               informatique, afin de faciliter la transition entre théorie et pratique.
             </p>
           </section>
+
+          <div class="section-spacing" aria-hidden="true"></div>
 
           <section id="avantages-limites">
             <h3>Avantages et limites</h3>
@@ -143,6 +155,8 @@
             </p>
           </section>
 
+          <div class="section-spacing" aria-hidden="true"></div>
+
           <section id="cas-usage">
             <h3>Cas d’usage courants</h3>
             <p>
@@ -167,6 +181,8 @@
             </p>
           </section>
         </section>
+
+        <div class="section-spacing" aria-hidden="true"></div>
 
         <section id="fondamentaux">
           <h2>Fondamentaux de Matlab</h2>
@@ -217,6 +233,8 @@
               recommandé dans les scripts afin d’éviter un affichage excessif et d’améliorer les performances.
             </p>
           </section>
+
+          <div class="section-spacing" aria-hidden="true"></div>
 
           <section id="variables">
             <h3>Variables</h3>
@@ -272,6 +290,8 @@
               <span class="inline-snippet language-matlab"><code><span class="token-operator">clear</span></code></span>.
             </p>
           </section>
+
+          <div class="section-spacing" aria-hidden="true"></div>
 
           <section id="types-primitifs">
             <h3>Types primitifs</h3>
@@ -332,6 +352,8 @@
 <span class="token-variable">salut</span> <span class="token-operator">=</span> <span class="token-variable">prenomStr</span> <span class="token-operator">+</span> <span class="token-string">" !"</span>;</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
           </section>
 
+          <div class="section-spacing" aria-hidden="true"></div>
+
           <section id="structures-donnees">
             <h3>Structures de données</h3>
             <p>
@@ -390,6 +412,8 @@
             </button><code><span class="token-variable">capteur</span> <span class="token-operator">=</span> <span class="token-function">struct</span>(<span class="token-string">"id"</span>, <span class="token-number">7</span>, <span class="token-string">"nom"</span>, <span class="token-string">"Temp"</span>, <span class="token-string">"valeurs"</span>, [<span class="token-number">21.4</span> <span class="token-number">22.1</span>]);</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
           </section>
 
+          <div class="section-spacing" aria-hidden="true"></div>
+
           <section id="operations">
             <h3>Opérations</h3>
             <p>
@@ -443,6 +467,8 @@
 <span class="token-variable">etudiant</span> <span class="token-operator">=</span> <span class="token-logical">true</span>;
 <span class="token-variable">eligible</span> <span class="token-operator">=</span> (<span class="token-variable">age</span> <span class="token-operator">>=</span> <span class="token-number">18</span>) <span class="token-operator">&</span> <span class="token-variable">etudiant</span>;</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
           </section>
+
+          <div class="section-spacing" aria-hidden="true"></div>
 
           <section id="controle-flux">
             <h3>Contrôle du flux</h3>
@@ -528,6 +554,8 @@
 <span class="token-keyword">end</span></code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
           </section>
 
+          <div class="section-spacing" aria-hidden="true"></div>
+
           <section id="fonctions">
             <h3>Fonctions</h3>
             <p>
@@ -577,6 +605,8 @@
 <span class="token-variable">f</span>(<span class="token-number">3</span>)</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
           </section>
 
+          <div class="section-spacing" aria-hidden="true"></div>
+
           <section id="toolboxes">
             <h3>Toolboxes</h3>
             <p>
@@ -601,21 +631,28 @@
           </section>
         </section>
 
+        <div class="section-spacing" aria-hidden="true"></div>
+
         <section id="notions-intermediaires">
           <h2>Notions intermédiaires en Matlab</h2>
           <section id="visualisation">
             <h3>Visualisation</h3>
           </section>
+          <div class="section-spacing" aria-hidden="true"></div>
           <section id="gestion-erreurs">
             <h3>Gestion des erreurs</h3>
           </section>
+          <div class="section-spacing" aria-hidden="true"></div>
           <section id="manipulation-fichiers">
             <h3>Manipulation de fichiers</h3>
           </section>
+          <div class="section-spacing" aria-hidden="true"></div>
           <section id="programmation-objet">
             <h3>Programmation orientée objet</h3>
           </section>
         </section>
+
+        <div class="section-spacing" aria-hidden="true"></div>
 
         <section id="mise-en-pratique">
           <h2>Mise en pratique</h2>
