@@ -342,7 +342,7 @@ a:hover {
 
 pre {
   margin: 1rem 0rem;
-  padding: 1.25rem;
+  padding: 0;
   border-radius: 12px;
   overflow-x: auto;
   font-family: "JetBrains Mono", "SFMono-Regular", "Menlo", "Monaco", "Consolas",
@@ -360,6 +360,12 @@ code {
   background: #0b0d12;
   color: #c9d1d9;
   position: relative;
+  padding: 1.5rem;
+}
+
+.section-block > .code-block {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .inline-snippet {
