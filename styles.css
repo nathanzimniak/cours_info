@@ -293,7 +293,6 @@ a:hover {
 
 .content article {
   scroll-margin-top: 7rem;
-  padding: 0 10px;
 }
 
 .content article > :not(h2) {
