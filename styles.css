@@ -215,51 +215,43 @@ a:hover {
   content: "";
 }
 
-.side-nav summary span {
-  display: block;
-  position: relative;
+.side-nav .summary-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
   color: var(--text);
   font-weight: 500;
-  padding: 0.4rem 1.6rem 0.4rem 0.5rem;
+  padding: 0.4rem 0.5rem;
   border-radius: 8px;
   transition: background-color 0.2s ease, color 0.2s ease,
     transform 0.2s ease;
 }
 
-.side-nav summary span::after {
-  content: "›";
-  position: absolute;
-  right: 0.6rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--accent-1);
+.side-nav .summary-label {
+  flex: 1;
+}
+
+.side-nav .summary-arrow {
   width: 0.6rem;
   height: 0.6rem;
-  background-color: currentColor;
-  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><path d='M4 2l4 4-4 4' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/></svg>");
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: contain;
-  -webkit-mask-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><path d='M4 2l4 4-4 4' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/></svg>\");
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  -webkit-mask-size: contain;
+  color: var(--accent-1);
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.side-nav details[open] summary span::after {
-  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><path d='M2 4l4 4 4-4' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/></svg>");
-  -webkit-mask-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><path d='M2 4l4 4 4-4' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/></svg>\");
+.side-nav details[open] summary .summary-arrow {
+  transform: rotate(90deg);
 }
 
-.side-nav summary:hover span,
-.side-nav summary:focus-visible span {
+.side-nav summary:hover .summary-content,
+.side-nav summary:focus-visible .summary-content {
   background: var(--accent-2);
   color: var(--accent-0);
 }
 
-.side-nav summary:hover span::after,
-.side-nav summary:focus-visible span::after {
+.side-nav summary:hover .summary-arrow,
+.side-nav summary:focus-visible .summary-arrow {
   color: var(--accent-0);
 }
 
