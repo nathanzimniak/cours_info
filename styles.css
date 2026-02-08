@@ -263,10 +263,11 @@ a:hover {
   color: var(--text);
   font-weight: 500;
   display: block;
-  padding: 0.2rem 0.4rem;
+  padding: 0.2rem 0.5rem;
   border-radius: 8px;
   transition: background-color 0.2s ease, color 0.2s ease,
     transform 0.2s ease;
+  font-size: 0.9rem;
 }
 
 .side-nav .sub-item {
