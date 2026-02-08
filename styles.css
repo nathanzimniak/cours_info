@@ -227,7 +227,7 @@ a:hover {
   width: 100%;
   color: var(--text);
   font-weight: 500;
-  padding: 0.4rem 0.5rem;
+  padding: 0.4rem 0.6rem;
   border-radius: 8px;
   transition: background-color 0.2s ease, color 0.2s ease,
     transform 0.2s ease;
@@ -263,7 +263,7 @@ a:hover {
   color: var(--text);
   font-weight: 500;
   display: block;
-  padding: 0.4rem 0.5rem;
+  padding: 0.2rem 0.4rem;
   border-radius: 8px;
   transition: background-color 0.2s ease, color 0.2s ease,
     transform 0.2s ease;
