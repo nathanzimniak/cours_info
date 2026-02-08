@@ -219,6 +219,20 @@ a:hover {
   content: "";
 }
 
+.side-nav summary button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
 .side-nav summary span {
   display: block;
   flex: 1;
@@ -241,14 +255,14 @@ a:hover {
   transform: rotate(90deg);
 }
 
-.side-nav summary:hover span,
-.side-nav summary:focus-visible span {
+.side-nav summary button:hover span,
+.side-nav summary button:focus-visible span {
   background: var(--accent-2);
   color: var(--accent-0);
 }
 
-.side-nav summary:hover .summary-arrow,
-.side-nav summary:focus-visible .summary-arrow {
+.side-nav summary button:hover .summary-arrow,
+.side-nav summary button:focus-visible .summary-arrow {
   color: var(--accent-0);
 }
 
