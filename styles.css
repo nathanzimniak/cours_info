@@ -296,6 +296,11 @@ a:hover {
   padding: 0 10px;
 }
 
+.content article > :not(h2) {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .content h1 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
