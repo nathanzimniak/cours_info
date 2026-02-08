@@ -227,7 +227,7 @@ a:hover {
 }
 
 .side-nav summary span::after {
-  content: "→";
+  content: "›";
   position: absolute;
   right: 0.6rem;
   top: 50%;
@@ -238,7 +238,7 @@ a:hover {
 }
 
 .side-nav details[open] summary span::after {
-  content: "↓";
+  content: "⌄";
 }
 
 .side-nav summary:hover span,
