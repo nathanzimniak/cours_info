@@ -376,11 +376,11 @@ code {
 }
 
 .section-spacing {
-  height: 24px;
+  height: 32px;
 }
 
 .section-spacing--main {
-  height: 60px;
+  height: 120px;
 }
 
 .copy-button {
