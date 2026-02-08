@@ -305,6 +305,11 @@ a:hover {
   margin-bottom: 0.75rem;
 }
 
+.content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
 .content p {
   color: var(--muted-0);
   line-height: 1.7;
