@@ -318,7 +318,7 @@ a:hover {
   color: var(--muted-0);
   line-height: 1.5;
   font-size: 0.96rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.8rem;
 }
 
 .content p:last-child {
