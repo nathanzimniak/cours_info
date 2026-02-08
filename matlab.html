@@ -254,8 +254,8 @@
             </button><code><span class="token-comment">% Ceci est un commentaire sur une seule ligne</span>
 
 <span class="token-comment">%{</span>
-<span class="token-comment">	Ceci est un commentaire sur</span>
-<span class="token-comment">	plusieurs lignes</span>
+<span class="token-comment">  Ceci est un commentaire sur</span>
+<span class="token-comment">  plusieurs lignes</span>
 <span class="token-comment">%}</span></code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
             <p>
               La fin d’une instruction MATLAB est marquée par un retour à la ligne. Lorsqu’une ligne se termine
@@ -271,7 +271,7 @@
           <section class="section-block" id="variables">
             <h3>Variables</h3>
             <p>
-              MATLAB ne nécessite aucune déclaration préalable des variables. Une variable est créée dès qu’une
+              MATLAB repose sur une <span class="accent-text">déclaration facultative</span> des variables : une variable est créée dès qu’une
               valeur lui est affectée pour la première fois.
             </p>
             <pre class="code-block language-matlab"><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !">
@@ -279,7 +279,7 @@
                 <path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/>
               </svg>
             </button><code><span class="token-comment">% Création d'une variable</span>
-<span class="token-variable">temperature</span> <span class="token-operator">=</span> <span class="token-number">18.5</span>;</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
+<span class="token-variable">temperature</span> <span class="token-operator">=</span> <span class="token-number">18</span>;</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
             <p>
               MATLAB utilise un <span class="accent-text">typage dynamique</span> : le type d’une variable dépend de la valeur qu’elle contient et
               peut changer au cours de l’exécution du programme. Le type est modifié automatiquement sans
@@ -294,9 +294,10 @@
               </svg>
             </button><code><span class="token-comment">% Création d'une variable</span>
 <span class="token-variable">x</span> <span class="token-operator">=</span> <span class="token-number">42</span>;
-<span class="token-function">class</span>(<span class="token-variable">x</span>) <span class="token-comment">% La variable x est un entier</span>
+<span class="token-function">class</span>(<span class="token-variable">x</span>) <span class="token-comment">% x est un entier</span>
+				
 <span class="token-variable">x</span> <span class="token-operator">=</span> <span class="token-string">"Bonjour"</span>;
-<span class="token-function">class</span>(<span class="token-variable">x</span>) <span class="token-comment">% La variable x est une chaîne de caractères</span></code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
+<span class="token-function">class</span>(<span class="token-variable">x</span>) <span class="token-comment">% x est devenue une chaîne de caractères</span></code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
             <p>
               Les noms de variables doivent respecter les règles suivantes : (1) ils doivent commencer par une
               lettre, (2) ils peuvent contenir des lettres, des chiffres et le caractère _, (3) ils ne peuvent
