@@ -457,6 +457,12 @@ code {
   background: var(--accent-2);
 }
 
+.language-python .token-txt,
+.language-matlab .token-txt,
+.language-fortran .token-txt {
+  color: var(--accent-0);
+}
+
 .language-python .token-keyword,
 .language-matlab .token-keyword,
 .language-fortran .token-keyword {
