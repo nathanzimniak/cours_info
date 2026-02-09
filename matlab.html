@@ -307,9 +307,9 @@
           <section class="section-block" id="types-primitifs">
             <h3>Types primitifs</h3>
             <p>
-			  Par défaut, toutes les valeurs numériques créées dans MATLAB sont de type <span class="accent-text">double</span>, c’est-à-dire des nombres à virgule flottante en double précision.
+			  Par défaut, toutes les valeurs numériques créées dans MATLAB sont de type <span class="accent-text">double</span>, c'est-à-dire des nombres à virgule flottante en double précision.
 				MATLAB propose également le type <span class="accent-text">single</span> (simple précision), mais celui-ci doit être explicitement spécifié.
-				Le type double est utilisé dans la grande majorité des calculs scientifiques en raison de sa précision élevée et de sa compatibilité avec l’ensemble des fonctions intégrées à MATLAB.
+				Le type double est utilisé dans la grande majorité des calculs scientifiques en raison de sa précision élevée et de sa compatibilité avec l'ensemble des fonctions intégrées à MATLAB.
             </p>
             <pre class="code-block language-matlab"><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !">
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -318,47 +318,54 @@
             </button><code><span class="token-comment">% Création d'une variable de type double</span>
 <span class="token-variable">a</span> <span class="token-operator">=</span> <span class="token-number">3.14</span>;
 				
-<span class="token-comment">% Création d'une variable de type simple</span>
+<span class="token-comment">% Création d'une variable de type single</span>
 <span class="token-variable">b</span> <span class="token-operator">=</span> <span class="token-function">single</span>(<span class="token-number">3.14</span>);</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
             <p>
-              MATLAB supporte plusieurs types <span class="accent-text">entiers</span> signés et non signés, tels que int8, int16, int32, int64,
-			  ainsi que leurs équivalents non signés uint8, uint16, uint32 et uint64. Contrairement aux doubles,
-              ces types doivent être explicitement spécifiés. Les entiers sont principalement utilisés lorsque la
-              mémoire ou la représentation exacte des valeurs est critique.
+		      MATLAB supporte plusieurs types <span class="accent-text">entiers</span> signés et non signés (c'est-à-dire pouvant représenter ou non un signe négatif), tels que
+			  int8, int16, int32, int64, ainsi que leurs équivalents non signés uint8, uint16, uint32 et uint64.
+			  Contrairement au type double, ces types doivent être explicitement spécifiés.
+			  Les entiers sont principalement utilisés lorsque l'optimisation de la mémoire ou la représentation exacte des valeurs est essentielle.
             </p>
             <pre class="code-block language-matlab"><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !">
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/>
               </svg>
-            </button><code><span class="token-variable">pixel</span> <span class="token-operator">=</span> <span class="token-function">uint8</span>(<span class="token-number">255</span>);
-<span class="token-variable">compteur</span> <span class="token-operator">=</span> <span class="token-function">int16</span>(<span class="token-number">-120</span>);</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
+            </button><code><span class="token-comment">% Création d'une variable de type entier (signé) sur 16 bits</span>
+<span class="token-variable">compteur</span> <span class="token-operator">=</span> <span class="token-function">int16</span>(<span class="token-number">-120</span>);
+
+<span class="token-comment">% Création d'une variable de type entier (non-signé) sur 8 bits</span>
+<span class="token-variable">pixel</span> <span class="token-operator">=</span> <span class="token-function">uint8</span>(<span class="token-number">230</span>);</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
             <p>
-              Les valeurs logiques sont représentées par le type logical, qui ne peut prendre que deux valeurs :
-              <span class="inline-snippet language-matlab"><code><span class="token-txt">true</span></code></span> ou
+			  MATLAB dispose aussi d'un type booléen, appelé <span class="accent-text">logical</span>, qui ne peut prendre que deux valeurs :
+			  <span class="inline-snippet language-matlab"><code><span class="token-txt">true</span></code></span> ou
               <span class="inline-snippet language-matlab"><code><span class="token-txt">false</span></code></span>.
+			  Ce type est couramment employé pour représenter des conditions ou des résultats de comparaisons.
             </p>
             <pre class="code-block language-matlab"><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !">
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/>
               </svg>
-            </button><code><span class="token-variable">estValide</span> <span class="token-operator">=</span> <span class="token-variable">temperature</span> <span class="token-operator">></span> <span class="token-number">0</span>;
-<span class="token-variable">estValide</span> <span class="token-operator">=</span> <span class="token-logical">true</span>;</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
+            </button><code><span class="token-comment">% Création d'une variable logique par affectation directe</span>				
+<span class="token-variable">estValide</span> <span class="token-operator">=</span> <span class="token-logical">true</span>;
+				
+<span class="token-comment">% Création d'une variable logique par comparaison</span>
+<span class="token-variable">estPositive</span> <span class="token-operator">=</span> <span class="token-variable">temperature</span> <span class="token-operator">></span> <span class="token-number">0</span>;</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
             <p>
-              MATLAB propose deux représentations distinctes pour le texte. Les character arrays utilisent des
-              apostrophes simples <span class="inline-snippet language-matlab"><code><span class="token-txt">'</span></code></span>
-              tandis que les strings, introduites plus récemment, utilisent des guillemets doubles
-              <span class="inline-snippet language-matlab"><code><span class="token-txt">"</span></code></span>. Les strings offrent
-              une manipulation plus moderne et plus flexible du texte (concaténation, comparaison, tableaux de
-              chaînes), tandis que les character arrays restent largement présents pour des raisons de
-              compatibilité.
+			  MATLAB propose deux représentations distinctes pour le texte : les <span class="accent-text">character arrays</span>, délimités par des apostrophes simples
+			  <span class="inline-snippet language-matlab"><code><span class="token-txt">'</span></code></span>, et les <span class="accent-text">strings</span>, délimitées par des guillemets doubles
+			  <span class="inline-snippet language-matlab"><code><span class="token-txt">"</span></code></span>.
+			  Les strings proposent des outils plus modernes pour manipuler le texte, mais les character arrays demeurent largement employés pour assurer la compatibilité
+			  avec les anciens codes.
             </p>
             <pre class="code-block language-matlab"><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !">
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/>
               </svg>
-            </button><code><span class="token-variable">prenomChar</span> <span class="token-operator">=</span> <span class="token-string">'Lucie'</span>;
-<span class="token-variable">prenomStr</span> <span class="token-operator">=</span> <span class="token-string">"Lucie"</span>;
-<span class="token-variable">salut</span> <span class="token-operator">=</span> <span class="token-variable">prenomStr</span> <span class="token-operator">+</span> <span class="token-string">" !"</span>;</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
+            </button><code><span class="token-comment">% Création d'une variable de type character array</span>
+<span class="token-variable">prenomChar</span> <span class="token-operator">=</span> <span class="token-string">'Lucile'</span>;
+
+<span class="token-comment">% Création d'une variable de type character string</span>
+<span class="token-variable">prenomStr</span> <span class="token-operator">=</span> <span class="token-string">"Lucile"</span>;</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
           </section>
 
           <div class="section-spacing" aria-hidden="true"></div>
