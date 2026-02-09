@@ -390,48 +390,58 @@
 <span class="token-variable">M</span> <span class="token-operator">=</span> [<span class="token-number">1</span> <span class="token-number">2</span> <span class="token-number">3</span>; <span class="token-number">4</span> <span class="token-number">5</span> <span class="token-number">6</span>];
 
 <span class="token-comment">% Création d'une matrice de taille 1x3 (vecteur ligne)</span>
-<span class="token-variable">vectLigne</span> <span class="token-operator">=</span> [<span class="token-number">1</span> <span class="token-number">2</span> <span class="token-number">3</span>];
+<span class="token-variable">vectLigne</span> <span class="token-operator">=</span> [<span class="token-string">"Bleu"</span> <span class="token-string">"Vert"</span> <span class="token-string">"Rouge"</span>];
 
 <span class="token-comment">% Création d'une matrice de taille 3x1 (vecteur colonne)</span>
 <span class="token-variable">vectCol</span> <span class="token-operator">=</span> [<span class="token-number">1</span>; <span class="token-number">2</span>; <span class="token-number">3</span>];</code>
 <span class="token-comment">% Création d'une matrice de taille 1x1 (scalaire)</span>
 <span class="token-variable">scal</span> <span class="token-operator">=</span> [<span class="token-number">1</span>; <span class="token-number">2</span>; <span class="token-number">3</span>];</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
             <p>
-              Les cell arrays permettent de stocker des éléments de types différents dans une même structure.
-              Chaque cellule peut contenir une valeur arbitraire, comme un nombre, une chaîne de caractères, une
-              matrice ou même une autre cellule. Les cell arrays sont utiles lorsque les données ne sont pas
-              homogènes ou lorsque leur taille varie.
+			  MATLAB propose également des structures capables de regrouper des données hétérogènes : les <span class="accent-text">cell arrays</span>.
+			  Chaque cellule peut contenir une valeur arbitraire, comme un nombre, une chaîne de caractères, une matrice ou même une autre cellule.
+			  Elles sont particulièrement adaptées à la gestion d'ensembles de données variées ou lorsque les éléments stockés n'ont pas tous les mêmes dimensions.
             </p>
             <pre class="code-block language-matlab"><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !">
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/>
               </svg>
-            </button><code><span class="token-variable">infos</span> <span class="token-operator">=</span> {<span class="token-string">"signal"</span>, <span class="token-number">256</span>, [<span class="token-number">1</span> <span class="token-number">2</span>; <span class="token-number">3</span> <span class="token-number">4</span>]};
-<span class="token-variable">infos</span>{<span class="token-number">2</span>}</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
+            </button><code><span class="token-comment">% Création d'un cell array de taille 1x3</span>
+<span class="token-variable">infos</span> <span class="token-operator">=</span> {<span class="token-string">"signal"</span>, <span class="token-number">256</span>, [<span class="token-number">1</span> <span class="token-number">2</span>; <span class="token-number">3</span> <span class="token-number">4</span>]};</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
             <p>
-              Les tables permettent de manipuler des données tabulaires, proches d'une feuille de calcul ou d'une
-              base de données simple. Chaque colonne possède un nom et peut contenir un type différent.
+			  Pour représenter des données plus structurées, MATLAB propose également les <span class="accent-text">tables</span>. Elles permettent de manipuler des données tabulaires,
+			  à la manière d'une feuille de calcul ou d'une base de données. Une table est construite à partir de vecteurs colonnes, chaque colonne pouvant contenir un type de données
+			  différent. Cette organisation facilite la manipulation et l'analyse d'ensembles de données structurés. En revanche, toutes les colonnes doivent obligatoirement avoir le
+			  même nombre de lignes.
             </p>
             <pre class="code-block language-matlab"><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !">
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/>
               </svg>
-            </button><code><span class="token-variable">nom</span> <span class="token-operator">=</span> [<span class="token-string">"Ada"</span>; <span class="token-string">"Alan"</span>];
+            </button><code><span class="token-comment">% Création d'une table à partir de deux vecteurs colonnes</span>
+<span class="token-variable">nom</span> <span class="token-operator">=</span> [<span class="token-string">"Valentin"</span>; <span class="token-string">"Antoine"</span>];
 <span class="token-variable">score</span> <span class="token-operator">=</span> [<span class="token-number">95</span>; <span class="token-number">88</span>];
 <span class="token-variable">t</span> <span class="token-operator">=</span> <span class="token-function">table</span>(<span class="token-variable">nom</span>, <span class="token-variable">score</span>);</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
             <p>
-              Les structures permettent de regrouper plusieurs données hétérogènes au sein d'une même variable à
-              l'aide de champs nommés. Chaque champ représente un attribut identifié explicitement, ce qui
-              facilite l'organisation des informations. Elles sont particulièrement adaptées pour modéliser des
-              entités composées de plusieurs propriétés, lorsque l'on souhaite associer clairement chaque valeur
-              à sa signification sans recourir à la programmation orientée objet.
+
+			  MATLAB propose également les <span class="accent-text">structures</span> pour représenter des informations plus libres et plus sémantiques. Elles permettent de regrouper
+			  plusieurs données hétérogènes au sein d'une même variable à l'aide de champs nommés. Chaque champ correspond à un attribut explicitement identifié, ce qui facilite l'organisation
+			  et la lisibilité des informations. Les structures sont particulièrement adaptées pour modéliser des entités composées de plusieurs propriétés, lorsque l'on souhaite associer
+			  clairement chaque valeur à sa signification.
             </p>
             <pre class="code-block language-matlab"><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !">
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/>
               </svg>
-            </button><code><span class="token-variable">capteur</span> <span class="token-operator">=</span> <span class="token-function">struct</span>(<span class="token-string">"id"</span>, <span class="token-number">7</span>, <span class="token-string">"nom"</span>, <span class="token-string">"Temp"</span>, <span class="token-string">"valeurs"</span>, [<span class="token-number">21.4</span> <span class="token-number">22.1</span>]);</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
+            </button><code><span class="token-comment">% Création d'une structure à partir de la fonction struct()</span>
+<span class="token-variable">etudiant</span> <span class="token-operator">=</span> <span class="token-function">struct</span>(<span class="token-string">"prenom"</span>, <span class="token-string">"Antoine"</span>, <span class="token-string">"note"</span>, <span class="token-number">18</span>, <span class="token-string">"admis"</span>, <span class="token-logical">true</span>);
+
+<span class="token-comment">% Création d'une structure par affectation de champs</span>
+<span class="token-variable">etudiant.prenom</span> <span class="token-operator">=</span> <span class="token-string">"Antoine"</span>;
+<span class="token-variable">etudiant.note</span> <span class="token-operator">=</span> <span class="token-number">18</span>;
+<span class="token-variable">etudiant.admis</span> <span class="token-operator">=</span> <span class="token-logical">true</span>;</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
           </section>
+
+		  indexation ?
 
           <div class="section-spacing" aria-hidden="true"></div>
 
