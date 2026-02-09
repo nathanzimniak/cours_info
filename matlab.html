@@ -683,9 +683,9 @@
           <section class="section-block" id="visualisation">
             <h3>Visualisation</h3>
             <p>
-			  La visualisation est l’un des piliers fondamentaux de MATLAB. L’environnement intègre un moteur graphique performant et un large éventail de fonctions natives,
-			  qui permettent d’explorer rapidement des résultats numériques, de mettre en évidence des tendances et de valider visuellement des hypothèses.
-			  Cette capacité de représentation immédiate des données constitue un atout majeur pour l’analyse scientifique et l’ingénierie.
+			  La visualisation est l'un des piliers fondamentaux de MATLAB. L'environnement intègre un moteur graphique performant et un large éventail de fonctions natives,
+			  qui permettent d'explorer rapidement des résultats numériques, de mettre en évidence des tendances et de valider visuellement des hypothèses.
+			  Cette capacité de représentation immédiate des données constitue un atout majeur pour l'analyse scientifique et l'ingénierie.
             </p>
             <p>
 			  MATLAB permet de réaliser des <span class="accent-text">plots 1D</span> décrivant la relation entre une variable dépendante
@@ -697,51 +697,58 @@
               <span class="inline-snippet language-matlab"><code><span class="token-txt">semilogx(x, y)</span></code></span> ou
               <span class="inline-snippet language-matlab"><code><span class="token-txt">semilogy(x, y)</span></code></span>.
 			  Pour des représentations en coordonnées polaires, on utilise <span class="inline-snippet language-matlab"><code><span class="token-txt">polar(theta, r)</span></code></span>.
-			  Les données discrètes peuvent être visualisées à l’aide de diagrammes en barres
+			  Les données discrètes peuvent être visualisées à l'aide de diagrammes en barres
 			  <span class="inline-snippet language-matlab"><code><span class="token-txt">bar(x, y)</span></code></span>, ou de nuages de points
 			  <span class="inline-snippet language-matlab"><code><span class="token-txt">scatter(x, y)</span></code></span>,
 			  particulièrement utiles pour analyser la dispersion ou la corrélation entre variables.
             </p>
 			[EXEMPLE CODE]
             <p>
-			  MATLAB propose également des <span class="accent-text">plots 2D</span>, qui décrivent la relation entre une variable dépendante z et deux variables x et y :
-			  <span class="inline-snippet language-matlab"><code><span class="token-txt">z(x, y)</span></code></span>. Ce formalisme correspond typiquement à
-			  l’affichage de champs scalaires, d’images ou de données spatialisées.
+			  MATLAB propose également des <span class="accent-text">plots 2D</span>, qui décrivent la relation entre une variable dépendante z, représentée en couleur, et
+			  deux variables indépendantes x et y : <span class="inline-snippet language-matlab"><code><span class="token-txt">z(x, y)</span></code></span>.
+			  Ce formalisme correspond typiquement à l'affichage de champs scalaires, d'images ou de données spatialisées.
 			  La fonction <span class="inline-snippet language-matlab"><code><span class="token-txt">scatter(x, y, z)</span></code></span> permet de générer des nuages de
 			  points colorés, tandis que <span class="inline-snippet language-matlab"><code><span class="token-txt">imagesc(x, y, z)</span></code></span> affiche directement
-			  une matrice sous forme de carte de couleurs. D’autres fonctions, telles que
+			  une matrice sous forme de carte de couleurs. D'autres fonctions, telles que
 			  <span class="inline-snippet language-matlab"><code><span class="token-txt">pcolor(x, y, z)</span></code></span>,
 			  <span class="inline-snippet language-matlab"><code><span class="token-txt">contour(x, y, z)</span></code></span> ou
 			  <span class="inline-snippet language-matlab"><code><span class="token-txt">contourf(x, y, z)</span></code></span>, offrent des représentations complémentaires
 			  (cartes colorées ou courbes de niveau).
-			  Dans tous les cas, l’ajout d’une colorbar permet d’établir la correspondance entre couleurs et valeurs numériques de
-			  z, facilitant l’interprétation visuelle.
+			  Dans tous les cas, l'ajout d'une colorbar permet d'établir la correspondance entre couleurs et valeurs numériques de
+			  z, facilitant l'interprétation visuelle.
             </p>
 			[EXEMPLE CODE]
             <p>
-              <span class="accent-text">Plots 3D</span> : un plot 3D correspond à un triplet <span class="accent-text">x, y, z</span> et
-              représente une trajectoire dans l'espace. La fonction
-              <span class="inline-snippet language-matlab"><code><span class="token-txt">plot3</span></code></span> est dédiée à ce type de visualisation.
+			  MATLAB permet également de produire des <span class="accent-text">plots 3D</span>, décrivant relation entre une variable dépendante z, représentée par l'altitude, et
+			  deux variables indépendantes x et y : <span class="inline-snippet language-matlab"><code><span class="token-txt">z(x, y)</span></code></span>. Ce type de visualisation est
+			  particulièrement adapté à l'exploration de surfaces, de reliefs ou de champs tridimensionnels.
+			  La fonction <span class="inline-snippet language-matlab"><code><span class="token-txt">plot3(x, y, z)</span></code></span> permet de tracer des courbes dans l'espace,
+			  tandis que <span class="inline-snippet language-matlab"><code><span class="token-txt">scatter3(x, y, z)</span></code></span> génère des nuages de points 3D.
+			  Pour représenter des surfaces continues, on utilise généralement
+			  <span class="inline-snippet language-matlab"><code><span class="token-txt">surf(x, y, z)</span></code></span> ou
+			  <span class="inline-snippet language-matlab"><code><span class="token-txt">mesh(x, y, z)</span></code></span>, avec la possibilité d'associer une échelle de couleurs aux
+			  valeurs de z.
             </p>
-            <pre class="code-block language-matlab"><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !">
-              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/>
-              </svg>
-            </button><code><span class="token-comment">% Plot 3D : trajectoire hélicoïdale</span>
-<span class="token-variable">t</span> <span class="token-operator">=</span> <span class="token-function">linspace</span>(<span class="token-number">0</span>, <span class="token-number">4</span><span class="token-operator">*</span><span class="token-variable">pi</span>, <span class="token-number">200</span>);
-<span class="token-variable">x</span> <span class="token-operator">=</span> <span class="token-function">cos</span>(<span class="token-variable">t</span>);
-<span class="token-variable">y</span> <span class="token-operator">=</span> <span class="token-function">sin</span>(<span class="token-variable">t</span>);
-<span class="token-variable">z</span> <span class="token-operator">=</span> <span class="token-variable">t</span> <span class="token-operator">/</span> (<span class="token-number">2</span><span class="token-operator">*</span><span class="token-variable">pi</span>);
-<span class="token-function">plot3</span>(<span class="token-variable">x</span>, <span class="token-variable">y</span>, <span class="token-variable">z</span>);</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
+			[EXEMPLE CODE]
             <p>
-              <span class="accent-text">Paramètres des plots</span> : la plupart des fonctions acceptent des paires
-              nom-valeur pour configurer le rendu. Les paramètres comme <span class="inline-snippet language-matlab"><code><span class="token-txt">LineWidth</span></code></span>,
-              <span class="inline-snippet language-matlab"><code><span class="token-txt">LineStyle</span></code></span>, <span class="inline-snippet language-matlab"><code><span class="token-txt">Marker</span></code></span>
-              et <span class="inline-snippet language-matlab"><code><span class="token-txt">Color</span></code></span> contrôlent l'apparence des courbes. Les fonctions
-              <span class="inline-snippet language-matlab"><code><span class="token-txt">title</span></code></span>, <span class="inline-snippet language-matlab"><code><span class="token-txt">xlabel</span></code></span>, <span class="inline-snippet language-matlab"><code><span class="token-txt">ylabel</span></code></span>,
-              <span class="inline-snippet language-matlab"><code><span class="token-txt">legend</span></code></span>, <span class="inline-snippet language-matlab"><code><span class="token-txt">grid on</span></code></span> et
-              <span class="inline-snippet language-matlab"><code><span class="token-txt">axis</span></code></span> structurent le graphique et la lecture des valeurs.
+			  Enfin, MATLAB permet un contrôle fin de l'apparence des graphiques grâce à de nombreux paramètres graphiques. Lors de l'appel aux fonctions de tracé, il est possible
+			  de spécifier directement des propriétés telles que
+			  l'épaisseur des lignes (<span class="inline-snippet language-matlab"><code><span class="token-txt">'LineWidth'</span></code></span>),
+			  le style (<span class="inline-snippet language-matlab"><code><span class="token-txt">'LineStyle'</span></code></span>) ou
+			  la couleur (<span class="inline-snippet language-matlab"><code><span class="token-txt">'Color'</span></code></span>).
+              L'ajout de titres, de légendes et d'annotations s'effectue respectivement à l'aide de
+			  <span class="inline-snippet language-matlab"><code><span class="token-txt">title</span></code></span>,
+			  <span class="inline-snippet language-matlab"><code><span class="token-txt">xlabel</span></code></span>,
+			  <span class="inline-snippet language-matlab"><code><span class="token-txt">ylabel</span></code></span> et
+			  <span class="inline-snippet language-matlab"><code><span class="token-txt">legend</span></code></span>, tandis que
+			  <span class="inline-snippet language-matlab"><code><span class="token-txt">grid on</span></code></span> facilite la lecture des valeurs.
+			  Les limites des axes peuvent être ajustées avec
+			  <span class="inline-snippet language-matlab"><code><span class="token-txt">axis</span></code></span> ou
+			  <span class="inline-snippet language-matlab"><code><span class="token-txt">xlim</span></code></span> et
+			  <span class="inline-snippet language-matlab"><code><span class="token-txt">ylim</span></code></span>, et les cartes de couleurs sont modifiables via
+			  <span class="inline-snippet language-matlab"><code><span class="token-txt">colormap</span></code></span>.
             </p>
+			[EXEMPLE CODE]
           </section>
           <div class="section-spacing" aria-hidden="true"></div>
           <section class="section-block" id="gestion-erreurs">
