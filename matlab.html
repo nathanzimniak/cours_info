@@ -730,16 +730,18 @@
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/>
               </svg>
-            </button><code><span class="token-comment">% Grille 2D simple</span>
+            </button><code><span class="token-comment">% Création d'une grille 2D</span>
 <span class="token-variable">x</span> <span class="token-operator">=</span> <span class="token-operator">-</span><span class="token-number">3</span>:<span class="token-number">1</span>:<span class="token-number">3</span>;
 <span class="token-variable">y</span> <span class="token-operator">=</span> <span class="token-operator">-</span><span class="token-number">3</span>:<span class="token-number">1</span>:<span class="token-number">3</span>;
-<span class="token-comment">% Matrices de coordonnées</span>
 [<span class="token-variable">X</span>, <span class="token-variable">Y</span>] <span class="token-operator">=</span> <span class="token-function">meshgrid</span>(<span class="token-variable">x</span>, <span class="token-variable">y</span>);
-<span class="token-comment">% Valeurs z sur la grille</span>
-<span class="token-variable">Z</span> <span class="token-operator">=</span> <span class="token-function">sin</span>(<span class="token-variable">X</span>) <span class="token-operator">.*</span> <span class="token-function">cos</span>(<span class="token-variable">Y</span>);
-<span class="token-comment">% Carte de couleurs</span>
+
+<span class="token-comment">% Valeurs de z sur la grille</span>
+<span class="token-variable">Z</span> <span class="token-operator">=</span> <span class="token-function">sin</span>(<span class="token-variable">X</span>)<span class="token-operator">.*</span><span class="token-function">cos</span>(<span class="token-variable">Y</span>);
+
+<span class="token-comment">% Création d'un carte de couleurs</span>
 <span class="token-function">imagesc</span>(<span class="token-variable">x</span>, <span class="token-variable">y</span>, <span class="token-variable">Z</span>);
-<span class="token-txt">axis xy</span>
+
+<span class="token-comment">% Ajout d'une barre de couleurs</span>
 <span class="token-function">colorbar</span>;</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
             <p>
 			  MATLAB permet également de produire des <span class="accent-text">plots 3D</span>, décrivant relation entre une variable dépendante z, représentée par l'altitude, et
