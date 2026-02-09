@@ -683,62 +683,57 @@
           <section class="section-block" id="visualisation">
             <h3>Visualisation</h3>
             <p>
-              La visualisation est un pilier de MATLAB : elle permet d'analyser rapidement des résultats
-              numériques et de valider des hypothèses. Les fonctions graphiques produisent des figures
+              La visualisation est un axe majeur de MATLAB : l'environnement intègre un moteur graphique
+              complet et des fonctions natives dédiées, ce qui facilite l'exploration rapide de résultats
+              numériques et la validation d'hypothèses. Les fonctions graphiques produisent des figures
               interactives et exploitent un modèle de rendu cohérent basé sur des objets (axes, courbes, surfaces).
             </p>
             <p>
-              <span class="accent-text">Plots 1D</span> : la fonction <span class="inline-snippet language-matlab"><code><span class="token-txt">plot</span></code></span> accepte un vecteur
-              unique et utilise automatiquement l'indice des échantillons comme abscisse. Ce mode est adapté
-              aux séries temporelles discrètes ou aux suites de mesures.
+              <span class="accent-text">Plots 1D</span> : un plot 1D représente une variable <span class="accent-text">y</span> en fonction d'une
+              abscisse <span class="accent-text">x</span>. La fonction <span class="inline-snippet language-matlab"><code><span class="token-txt">plot(x, y)</span></code></span> trace une courbe
+              cartésienne classique.
             </p>
             <pre class="code-block language-matlab"><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !">
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/>
               </svg>
-            </button><code><span class="token-comment">% Plot 1D : l'abscisse est implicite</span>
-<span class="token-variable">signal</span> <span class="token-operator">=</span> <span class="token-function">randn</span>(<span class="token-number">200</span>, <span class="token-number">1</span>);
-<span class="token-function">plot</span>(<span class="token-variable">signal</span>);</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
+            </button><code><span class="token-comment">% Plot 1D : y en fonction de x</span>
+<span class="token-variable">x</span> <span class="token-operator">=</span> <span class="token-function">linspace</span>(<span class="token-number">0</span>, <span class="token-number">2</span><span class="token-operator">*</span><span class="token-variable">pi</span>, <span class="token-number">200</span>);
+<span class="token-variable">y</span> <span class="token-operator">=</span> <span class="token-function">sin</span>(<span class="token-variable">x</span>);
+<span class="token-function">plot</span>(<span class="token-variable">x</span>, <span class="token-variable">y</span>);</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
             <p>
-              <span class="accent-text">Plots 2D</span> : en fournissant deux vecteurs, <span class="inline-snippet language-matlab"><code><span class="token-txt">plot(x, y)</span></code></span>
-              trace une courbe cartésienne. MATLAB propose aussi <span class="inline-snippet language-matlab"><code><span class="token-txt">scatter</span></code></span> pour les nuages
-              de points et <span class="inline-snippet language-matlab"><code><span class="token-txt">bar</span></code></span> pour les diagrammes en barres.
+              <span class="accent-text">Plots 2D</span> : un plot 2D représente <span class="accent-text">x</span> et <span class="accent-text">y</span> dans un plan, avec une
+              valeur <span class="accent-text">z</span> codée par une échelle de couleur. Les fonctions comme
+              <span class="inline-snippet language-matlab"><code><span class="token-txt">scatter</span></code></span> ou <span class="inline-snippet language-matlab"><code><span class="token-txt">imagesc</span></code></span> permettent d'associer
+              une colorbar aux valeurs de <span class="accent-text">z</span>.
             </p>
             <pre class="code-block language-matlab"><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !">
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/>
               </svg>
-            </button><code><span class="token-comment">% Comparaison de deux signaux périodiques</span>
-<span class="token-variable">t</span> <span class="token-operator">=</span> <span class="token-number">0</span>:<span class="token-number">0.01</span>:<span class="token-number">2</span><span class="token-operator">*</span><span class="token-variable">pi</span>;
-<span class="token-variable">y1</span> <span class="token-operator">=</span> <span class="token-function">sin</span>(<span class="token-variable">t</span>);
-<span class="token-variable">y2</span> <span class="token-operator">=</span> <span class="token-function">cos</span>(<span class="token-variable">t</span>);
-<span class="token-function">figure</span>;
-<span class="token-function">plot</span>(<span class="token-variable">t</span>, <span class="token-variable">y1</span>, <span class="token-string">"LineWidth"</span>, <span class="token-number">1.5</span>);
-<span class="token-txt">hold on</span>;
-<span class="token-function">plot</span>(<span class="token-variable">t</span>, <span class="token-variable">y2</span>, <span class="token-string">"--"</span>, <span class="token-string">"LineWidth"</span>, <span class="token-number">1.5</span>);
-<span class="token-txt">grid on</span>;
-<span class="token-function">xlabel</span>(<span class="token-string">"t (rad)"</span>);
-<span class="token-function">ylabel</span>(<span class="token-string">"Amplitude"</span>);
-<span class="token-function">title</span>(<span class="token-string">"Sinus et cosinus"</span>);
-<span class="token-function">legend</span>(<span class="token-string">"sin(t)"</span>, <span class="token-string">"cos(t)"</span>, <span class="token-string">"Location"</span>, <span class="token-string">"best"</span>);</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
-            <p>
-              <span class="accent-text">Plots 3D</span> : pour des courbes dans l'espace, MATLAB propose
-              <span class="inline-snippet language-matlab"><code><span class="token-txt">plot3</span></code></span>. Pour des surfaces, les fonctions
-              <span class="inline-snippet language-matlab"><code><span class="token-txt">surf</span></code></span> et <span class="inline-snippet language-matlab"><code><span class="token-txt">mesh</span></code></span> utilisent une grille
-              <span class="inline-snippet language-matlab"><code><span class="token-txt">meshgrid</span></code></span> afin de représenter une fonction de deux variables.
-            </p>
-            <pre class="code-block language-matlab"><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !">
-              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/>
-              </svg>
-            </button><code><span class="token-comment">% Surface 3D : z = sin(x) * cos(y)</span>
-<span class="token-variable">x</span> <span class="token-operator">=</span> <span class="token-function">linspace</span>(<span class="token-number">-2</span>, <span class="token-number">2</span>, <span class="token-number">60</span>);
-<span class="token-variable">y</span> <span class="token-operator">=</span> <span class="token-function">linspace</span>(<span class="token-number">-2</span>, <span class="token-number">2</span>, <span class="token-number">60</span>);
+            </button><code><span class="token-comment">% Plot 2D : z codé par la couleur</span>
+<span class="token-variable">x</span> <span class="token-operator">=</span> <span class="token-function">linspace</span>(<span class="token-number">-2</span>, <span class="token-number">2</span>, <span class="token-number">80</span>);
+<span class="token-variable">y</span> <span class="token-operator">=</span> <span class="token-function">linspace</span>(<span class="token-number">-2</span>, <span class="token-number">2</span>, <span class="token-number">80</span>);
 <span class="token-operator">[</span><span class="token-variable">X</span><span class="token-operator">,</span> <span class="token-variable">Y</span><span class="token-operator">]</span> <span class="token-operator">=</span> <span class="token-function">meshgrid</span>(<span class="token-variable">x</span>, <span class="token-variable">y</span>);
 <span class="token-variable">Z</span> <span class="token-operator">=</span> <span class="token-function">sin</span>(<span class="token-variable">X</span>) <span class="token-operator">.*</span> <span class="token-function">cos</span>(<span class="token-variable">Y</span>);
-<span class="token-function">figure</span>;
-<span class="token-function">surf</span>(<span class="token-variable">X</span>, <span class="token-variable">Y</span>, <span class="token-variable">Z</span>);
-<span class="token-function">shading</span>(<span class="token-string">"interp"</span>);</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
+<span class="token-function">imagesc</span>(<span class="token-variable">x</span>, <span class="token-variable">y</span>, <span class="token-variable">Z</span>);
+<span class="token-function">axis</span>(<span class="token-string">"xy"</span>);
+<span class="token-function">colorbar</span>;</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
+            <p>
+              <span class="accent-text">Plots 3D</span> : un plot 3D correspond à un triplet <span class="accent-text">x, y, z</span> et
+              représente une trajectoire dans l'espace. La fonction
+              <span class="inline-snippet language-matlab"><code><span class="token-txt">plot3</span></code></span> est dédiée à ce type de visualisation.
+            </p>
+            <pre class="code-block language-matlab"><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/>
+              </svg>
+            </button><code><span class="token-comment">% Plot 3D : trajectoire hélicoïdale</span>
+<span class="token-variable">t</span> <span class="token-operator">=</span> <span class="token-function">linspace</span>(<span class="token-number">0</span>, <span class="token-number">4</span><span class="token-operator">*</span><span class="token-variable">pi</span>, <span class="token-number">200</span>);
+<span class="token-variable">x</span> <span class="token-operator">=</span> <span class="token-function">cos</span>(<span class="token-variable">t</span>);
+<span class="token-variable">y</span> <span class="token-operator">=</span> <span class="token-function">sin</span>(<span class="token-variable">t</span>);
+<span class="token-variable">z</span> <span class="token-operator">=</span> <span class="token-variable">t</span> <span class="token-operator">/</span> (<span class="token-number">2</span><span class="token-operator">*</span><span class="token-variable">pi</span>);
+<span class="token-function">plot3</span>(<span class="token-variable">x</span>, <span class="token-variable">y</span>, <span class="token-variable">z</span>);</code><button class="copy-button" type="button" aria-label="Copier le snippet" data-default-label="Copier le snippet" data-copied-label="Copié !"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm4 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h12v14z"/></svg></button></pre>
             <p>
               <span class="accent-text">Paramètres des plots</span> : la plupart des fonctions acceptent des paires
               nom-valeur pour configurer le rendu. Les paramètres comme <span class="inline-snippet language-matlab"><code><span class="token-txt">LineWidth</span></code></span>,
